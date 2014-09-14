@@ -1,0 +1,213 @@
+/* CSS Document */
+
+/*=======================General===============================*/
+
+
+body {
+	Background-color:#100406;
+	padding:0px;
+	margin:0px;
+	font:bold 11px/19px Arial, Helvetica, sans-serif;
+	color:#FACFC6;
+}
+
+p, td, img, a, li {
+	padding:0px;
+	margin:0px;
+	}
+
+a {color:GoldenRod;text-decoration:none;}
+a:hover{color:GoldenRod;text-decoration:none;}
+a:link{color:GoldenRod;text-decoration:none;}
+
+ul{
+	padding:0px;
+	margin:0px;
+	list-style-type:none;
+	}
+
+/*=======================General===============================*/
+
+
+.bg_image{
+	background:url(images/homepage/header-image.jpg) no-repeat 0 0 #100406;
+	padding:76px 0 0 0;
+	}
+	
+.logo_panel{
+	padding: 0 0 48px 59px;	
+	}
+	
+	
+	
+/*================Left panel==================*/
+
+.left_panel{
+	background:url(images/homepage/left_panel_bg.gif) no-repeat 0 280px;;
+	padding:311px 43px 0 32px;
+	}
+	
+.feature_heading{
+	padding:0 0 15px 0;
+	}
+	
+.feature_bg{
+	background:url(images/homepage/feature_bg.gif) no-repeat 0 0;
+	padding-bottom:23px;
+	}
+	
+.feature_bg2{
+	background:url(images/homepage/feature_bg2.gif) no-repeat 0 0;
+	padding-bottom:23px;
+	}
+	
+.feature_bg3{
+	background:url(images/homepage/feature_bg3.gif) no-repeat 0 0;
+	padding-bottom:23px;
+	}
+	
+.game_heading{
+	padding:8px 0 3px 16px;
+	}
+	
+.price{
+	padding:6px 0 2px 0;
+	width:48px;
+	background:url(images/homepage/feature_bg.gif) no-repeat top right;
+}
+	
+.buy_link_panel{
+	padding:59px 0 11px 19px;
+		width:48px;
+	background:url(images/homepage/feature_bg.gif) no-repeat bottom left;
+	}
+	
+.game_panel{
+	background:url(images/homepage/feature_bg.gif) no-repeat bottom right;
+	/**background:url(images/homepage/game1.gif) no-repeat 0 0;**/
+	position:relative;
+	margin:0;
+	padding:0;
+	}
+.game_panel img{border-radius:20px;border:1px solid black;}
+.game_panel img.buy1{position:absolute;top:70px;right:10px}
+
+.game_panel2{
+	background:url(images/homepage/game2.gif) no-repeat 0 0;
+	}
+	
+.game_panel3{
+	background:url(images/homepage/game3.gif) no-repeat 0 0;
+	}
+
+	
+a.click{
+	font:bold 11px/19px Arial, Helvetica, sans-serif;
+	color:#FACFC6;
+	text-decoration:none;
+	display:block;
+	background:url(images/homepage/click-bg.gif) no-repeat 0 0;
+	width:62px;
+	margin-bottom:2px;
+	}
+	
+a.click:hover{
+	color:#FF9B00;
+	}
+
+
+/*================Left panel==================*/
+
+/*================Menu panel===================*/
+.menu_panel{
+	background:url(images/homepage/menu-bg.jpg) no-repeat center top;
+	padding:84px 0 0 64px;
+	/**width:232px;
+	height:311px**/
+	}
+	
+ul.menu{
+	list-style-type:none;
+	padding:0px;
+	margin:0px;
+	}
+
+ul.menu li{
+	line-height:14px;
+	margin:11px;
+	}
+/*================Menu panel===================*/
+	
+	
+/*================Right panel====================*/
+
+.right_panel{
+	background:url(images/homepage/right_panel_bg.gif) no-repeat 15px 280px;
+	padding:294px 0 0 15px;
+	height:363px;
+}
+	
+.information_heading{
+	padding:0 0 28px 56px;
+	}
+	
+p.information_text{
+	font:normal 9px/11px Arial, Helvetica, sans-serif;
+	color:#ED9278;
+	margin-bottom:30px;
+	width:164px;
+	}
+	
+.no_padding{
+	margin-top:10px;
+	}
+	
+.more_panel{
+	padding-bottom:163px;
+	padding-right:27px;
+	}
+
+.more_panel a{
+	font:normal 11px/27px Tahoma, Arial, Helvetica, sans-serif;
+	color:#FFF8B9;
+	text-decoration:none;
+	text-align:center;
+	background:url(images/homepage/more-bg.gif) no-repeat 0 0;
+	display:block;
+	width:66px; height:27px;
+	}
+	
+.more_panel a:hover{
+	color:#0C0301;
+	}
+
+/*================Right panel====================*/
+
+
+/*================Footer panel====================*/
+
+.footer_panel{
+	padding:11px 0 16px 0;
+	font:normal 10px/28px Tahoma, Arial, Helvetica, sans-serif;
+	color:#FFFFFF;
+	}
+.footer_panel{
+	padding:11px 0 16px 0;
+	font:normal 10px/28px Tahoma, Arial, Helvetica, sans-serif;
+	color:#FFFFFF;
+	}
+.power_link{
+	font:normal 10px/28px Tahoma, Arial, Helvetica, sans-serif;
+	color:#967077;
+	}
+.power_link a{
+	font:normal 10px/28px Tahoma, Arial, Helvetica, sans-serif;
+	color:#967077;
+	text-decoration:none;
+	}
+	
+.power_link a:hover{
+	text-decoration:underline;
+	}
+
+/*================Footer panel====================*/

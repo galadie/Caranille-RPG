@@ -1,0 +1,430 @@
+/*
+Fichier du design de CARANILLE fait par :
+-Caranille
+-Dimitri
+*/
+
+body
+{
+	/**background-color: #516aff;**/
+	
+	background-image:-webkit-linear-gradient(top, blue 0%, lightblue 100%);
+	background-image: linear-gradient(to bottom, blue 0%, lightblue 100%);
+	min-height:635px;
+
+	font-family: "Times New Roman", sans-serif;
+	text-align: center;
+}
+
+pre#debug
+{
+    background:#fff;
+    text-align:left;
+    height:300px;
+    overflow:auto;
+}
+
+body.Demon
+{
+    background-image:-webkit-linear-gradient(top, #516aff 0%, red 100%);
+	background-image: linear-gradient(to bottom, #516aff 0%, red 100%);
+	min-height:635px;
+}
+
+body.Ange
+{
+    background-image:-webkit-linear-gradient(top, #516aff 0%, white 100%);
+	background-image: linear-gradient(to bottom, #516aff 0%, white 100%);
+	min-height:635px;
+}
+
+nav
+{
+	border-radius: 40px;
+	border: 3px black solid;
+	display: inline-block;
+    width: 15%;
+	max-height: 400px;/*500px;*/
+	min-height: 400px;/*500px;*/
+	overflow: auto;
+    vertical-align: top;
+	background-color: #FFFFFF;
+	position:relative;
+}
+
+section
+{
+	border-radius: 40px;
+	border: 3px black solid;
+    display: inline-block;   
+	width: 50%; 
+	max-height: 400px;/*500px;*/
+	min-height: 400px;/*500px;*/
+	overflow: auto;
+    vertical-align: top;
+	background-color: #FFFFFF;
+}
+
+table#table-presentation
+{
+	display:inline-table;
+	border-collapse:separate;
+}
+
+section p.baseline
+{
+	position:absolute;
+	width:670px;
+	margin:auto;
+}
+
+article
+{
+    overflow:auto;
+
+    width:100%;
+    height:320px;
+    margin:40px auto 0;
+}
+
+aside
+{
+	border-radius: 40px;
+	border: 3px black solid;
+   	display: inline-block; 
+	width: 15%; 
+	max-height: 400px;/*500px;*/
+	min-height: 400px;/*500px;*/
+	overflow: auto;
+   	vertical-align: top;
+	background-color: #FFFFFF;
+}
+
+footer
+{
+	border-radius: 20px;
+	border: 3px black solid;
+	display: inline-block; 
+	width: 80%;
+	background-color: #FFFFFF;
+}
+
+body.install footer
+{
+	width:50%;
+}
+body.user footer,
+body.forum footer,
+body.public footer
+{
+	width:65%;
+}
+footer a.copyright
+{
+    text-align:center;
+   	width: 90%;
+   	margin:auto;
+ 
+}
+
+footer div#count_connected
+{
+    float:left;
+    text-align:left;
+    margin-left:5px;
+}
+
+footer div.admin 
+{
+    position:relative;
+    float:right;
+    margin-right:20px;
+}
+
+table
+{
+	display: inline-block;
+	border-collapse: collapse;
+}
+
+table.inventory
+{
+	/**display:block;**/
+}
+
+td
+{
+	border: 1px solid black;
+	background-color:#fff;
+}
+
+th
+{
+	border: 1px solid black;
+	background-color: rgb(255, 220, 120);
+}
+
+/** update by Dimitri : frame du chat **/
+.chatroom-frame
+{
+    width:540px;
+    height:150px;
+}
+
+/** update by Dimitri : CSS pour la page des News Main.php */
+
+table.newsboard td.none,
+td.none
+{
+	border: none;
+	width:460px;
+	height:25px;
+}
+
+article table.newsboard
+{
+	display: inline-block;
+	border-collapse: collapse;
+	margin:auto 40px;
+}
+
+
+table.newsboard td
+{
+	border: 1px solid black;
+	width:560px;
+}
+
+table.newsboard th
+{
+	border: 1px solid black;
+	background-color: rgb(255, 220, 120);
+	width:560px;
+
+}
+
+table.newsboard.diary
+{
+	width:70%;
+	margin:0;
+}
+
+table.newsboard.diary td.message,
+table.newsboard.chatroom td.message
+{
+	border: 1px solid black;
+	min-width:70%;
+}
+
+table.newsboard.diary th.date,
+table.newsboard.chatroom th.pseudo
+{
+	border: 1px solid black;
+	background-color: rgb(255, 220, 120);
+	max-width:30%;
+}
+
+a 
+{
+	color: black; 
+}
+
+/** update by Dimitri graphisme de Inventory.php : menu en ligne droite **/
+.inventory-menu form
+{ 
+    margin:0;
+    display:inline;
+}
+
+.inventory-list
+{ 
+    margin:0;
+    overflow:auto;
+	width:70%;
+	height:200px;
+}
+
+
+/**update by dimitri : Character.php identifiants du joueur **/
+#stats
+{
+	float:left;
+	width:70%;
+	margin:auto;
+}
+
+
+
+/** update by Dimitri graphisme de Login.php Register.php et Install/Index.php*/
+/* remis à jour par Caranille, raison: Aeration du code */
+#licence
+{
+	overflow:auto;
+	/**width:400px;
+	height:150px;**/
+	margin:auto;
+}
+
+#inscription #licence
+{ 
+	float:right; 
+	height:240px; 
+	width:44%;  
+	margin:none;
+}
+
+#inscription form
+{  
+	float:left; 
+	height:240px; 
+	width:54%; 
+	margin:none; 
+}
+
+#login
+{
+	margin:auto;
+	width:50%;
+}
+
+input[type=number]{width:50px}
+
+#inscription form  input[type=checkbox]
+{
+	float:left;
+	width:20%;
+}
+
+#inscription form  input,#login form  input
+{
+	float:right;
+	width:54%;
+}
+
+#inscription form  label,#login form  label
+{
+	float:left;
+	width:44%;
+}
+
+#inscription form  input[type=submit],#login form  input[type=submit]
+{
+	float:none;
+	margin:auto;
+	width:30%;
+}
+
+/** #menu.admin-menu, #menu.admin-menu ul**/
+#menu.admin-menu {
+  padding:0;
+  margin:auto;
+  margin-top:25px;
+  list-style:none;
+  text-align: center;
+  width: 80%;
+}
+#menu.admin-menu ul {
+  padding:0;
+  margin:0;
+  list-style:none;
+  text-align: center;
+}
+#menu.admin-menu li {
+   background-color:#729EBF; 
+   background-image:-webkit-linear-gradient(top, #729EBF 0%, #333A40 100%);
+   background-image: linear-gradient(to bottom, #729EBF 0%, #333A40 100%);
+   border-radius: 6px;
+   margin-bottom:2px;
+   box-shadow: 3px 3px 3px #999;
+   border:solid 1px #333A40
+}
+#menu.admin-menu li li {
+   max-height:0;
+   overflow: hidden;
+   transition: all .5s;
+   border-radius:0;
+   background: #444;
+   box-shadow: none;
+   border:none;
+   margin:0
+}
+#menu.admin-menu a {
+  display:block;
+  text-decoration: none;
+  color: #fff;
+  padding: 4px 0;
+  font-family: verdana;
+  font-size:13px;
+}
+#menu.admin-menu ul li a, #menu.admin-menu li:hover li a {
+  font-size:11px
+}
+#menu.admin-menu li:hover {
+   background: #729EBF
+}
+#menu.admin-menu li li:hover {
+   background: #999;
+}
+#menu.admin-menu ul li:last-child {
+   border-radius: 0 0 6px 6px;
+   border:none;
+}
+#menu.admin-menu li:hover li {
+  max-height: 15em;
+}
+
+div.form
+{
+    width:90%;
+    margin:auto;
+}
+
+.form div.line
+{
+    width:100%;
+    display:block;
+    clear:left;
+}
+
+.line label
+{
+  	background-color: rgb(255, 220, 120);
+  	height:22px;
+}
+
+.line label.text, .line label.number, .line label.date
+{
+    float:left;
+    width:49%;
+    display:inline-block;
+}
+
+.line label.area,.line label.foreign
+{
+    width:100%;
+    display:block;
+    clear:left;
+
+}
+
+.line textarea
+{
+    width:99%;
+    display:block;
+    clear:left;
+}
+
+#gallery img
+{
+    margin:6px;
+}
+
+#gallery a
+{
+    margin:2px;
+}
+
+
+.mp_titre { width:65%; }
+.mp_expediteur { width:10%; }
+.mp_time { width:20%; }

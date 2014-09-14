@@ -1,0 +1,98 @@
+
+#Map{
+    width:400px; 
+    margin-left:20px;
+    margin-top:40px;
+    float:left;
+}
+
+#Map.city
+{
+    width:231px; 
+}
+
+#Map .ligneMap 
+{ 
+    height: 21px; 
+    clear: left;
+	border: none;
+	background:lightgreen;
+}
+#Map .caseMap 
+{ 
+    width: 21px; 
+    height: 21px; 
+    float: left; 
+    background-image: url('images/arene_fond.png'); 
+    border: none;/*1px solid black;*/
+}
+#Map .ligneMap.footer .caseMap,
+#Map .ligneMap.header .caseMap,
+#Map .caseMap.compteur 
+{
+	background:white;
+	width: 19px; 
+	height: 19px;
+	border: 1px solid black;
+
+} 
+#Map .ligneMap.footer .caseMap.ext,
+#Map .ligneMap.header .caseMap.ext
+{
+    border:none;
+}
+
+#Map .caseMap input{ 
+    width:15px;
+    height:15px;
+    word-wrap: overflow-wrap;
+    margin:2px;  
+}
+
+#Map .ligneMap.footer{
+    position:fixed;
+    background:white;
+    margin-top:0;
+    margin-left:2px;
+}
+
+#Map .ligneMap.header{
+    position:fixed;
+    background:white;
+    margin-top:-21px;
+    margin-left:2px;
+}
+td #Map .ligneMap.footer,
+td #Map .ligneMap.header
+{
+    position:relative;
+}
+
+#Map .caseMap .landing
+{
+    width: 20px;
+    height: 20px;
+}
+
+#Map .caseMap .landing.personnage
+{
+    background-color:white;
+	border-radius: 40px; 
+}
+
+#Map .caseMap .landing.sand
+{
+    background:lightyellow;
+}
+#Map .caseMap .landing.rock
+{
+    background:lightgrey;
+}
+#Map .caseMap .landing.water
+{
+    background:lightblue;
+}
+#Map .caseMap .landing.grass
+{
+    background:lightgreen;
+}

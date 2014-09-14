@@ -1,0 +1,153 @@
+#corps #arme
+{
+	position:relative;
+	background:none;
+	border:none;
+	box-shadow:none;
+}
+
+#corps #arme div 
+{
+	clear:left;
+	margin:auto;
+	background-color:transparent;
+}
+
+.manche{ 
+	background-image:-webkit-linear-gradient(right, brown 0%, white 100%);
+	background-image: linear-gradient(to left, brown 0%, white 100%);
+
+}
+.garde{ 
+	background-image:-webkit-linear-gradient(left, gold 0%, white 100%);
+	background-image: linear-gradient(to right, gold 0%, white 100%);
+
+}
+.lame{
+		
+	background-image:-webkit-linear-gradient(bottom, grey 0%, white 100%);
+	background-image: linear-gradient(to top , grey 0%, white 100%);
+}
+/** affichage de l'epee **/
+
+.sword .manche{		width:5px;		height:25px;	}
+.sword .garde{		width:30px;		height:5px;		}
+.sword .lame{		width:5px;		height:150px;	position:relative;}
+.sword  #lame:after {    width: 0;    height: 0;    position:absolute;    bottom: -30px;    left: -2px;
+    content: "";
+    border-style: solid;
+    border-color: gray transparent transparent transparent;
+    border-width: 30px 5px 0 5px;
+}
+
+/** affichage de la dague **/
+.dagues .manche{		width:5px;		height:15px;	}
+.dagues .garde{		width:15px;		height:5px;		}
+.dagues .lame{		width:5px;		height:70px;	position:relative;}
+.dagues  #lame:after {    width: 0;    height: 0;    position:absolute;    bottom: -30px;    left: -2px;
+    content: "";
+    border-style: solid;
+    border-color: gray transparent transparent transparent;
+    border-width: 30px 5px 0 5px;
+}
+
+.espadon .manche{	width:10px;		height:50px;	}
+.espadon .garde{		width:30px;		height:10px;	}
+.espadon .lame{		width:25px;		height:200px;	position:relative;}
+.espadon  #lame:after {    width: 0;    height: 0;    position:absolute;    bottom: -30px;    left: -2px;
+    content: "";
+    border-style: solid;
+    border-color: gray transparent transparent transparent;
+    border-width: 30px 15px 0 15px;
+}
+/** affichage du marteau **/
+.hammer .manche{		width:10px;		height:25px;	position:absolute;	top:35px;	left:45px;	}
+.hammer .garde{		width:5px;		height:150px;	}
+.hammer .lame{		width:100px;	height:50px;	}
+
+/** affichage arc **/
+.arc .#manche {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  box-shadow: 15px 15px 0 0 red;
+}
+.arc .manche{	width:6px;		height:99px;	position:absolute; 	top:50px; 	left:50px;	}
+.arc .garde{		width:12px;		height:10px;	position:absolute;	top:90px;	left:45px;	}
+#corps .arc .lame {    	width:50px;     height: 200px; 
+
+	background:white;
+	/**border-color:white;**/
+    border-left:2px dotted #000; /* the 'strokes' of the arc */
+	border-top:1px solid #000;
+ 	border-bottom:1px solid #000;
+	border-right:5px solid #000;
+   display: inline-block;
+    border-top-right-radius: 100px; /* for making the elements 'round' */
+    border-bottom-right-radius: 100px; /* for making the elements 'round' */
+}
+
+.lance{ 			width:50px; 	height:300px	}
+.lance .manche{		width:5px;		height:250px;	 }
+.lance .garde{		width:10px;		height:25px;	position:absolute;	top:235px;	left:19px;	z-index:2;}
+.lance #lame {    	width:10px;    	height: 0;    	position:relative;
+    border-style: solid;
+    border-color: transparent transparent gray transparent;
+    border-width: 0 10px 10px 10px;
+    margin: 7px 0 25px 0;
+}
+.lance #lame:after {    width: 0;    height: 0;    position:absolute;    top: 10px;    left: -10px;
+    content: "";
+    border-style: solid;
+    border-color: gray transparent transparent transparent;
+    border-width: 30px 15px 0 15px;
+}
+
+.baton{ 			width:50px; 	height:300px	}
+.baton .manche{		width:5px;		height:250px;	 }
+.baton .garde{		width:10px;		height:25px;	position:absolute;	top:30px;	left:19px;	z-index:2;}
+.baton #lame {    	width:30px;    	height: 30px;    	position:absolute;	top:0px;	left:10px;	z-index:2;
+    border-style: solid;
+    border-color: transparent transparent gray transparent;
+	border-radius:20px;
+    margin: 7px 0 25px 0;
+}
+
+/** affichage arc **/
+.disque .#manche {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  box-shadow: 15px 15px 0 0 red;
+}
+.disque .manche{	width:6px;		height:20px;	position:absolute; 	top:15px; 	left:45px;	}
+.disque .garde{	width:12px;	height:10px;	position:absolute;	top:10px;	left:45px;	}
+#corps .disque .lame {    	width:50px;     height: 50px; 
+
+	background:white;
+	border:5px solid #000;
+   display: inline-block;
+    border-radius: 40px; /* for making the elements 'round' */
+}
+
+.sceptre{ 			width:50px; 	height:300px	}
+.sceptre .manche{		width:5px;		height:150px;	 }
+.sceptre .garde{		width:10px;		height:25px;	position:absolute;	top:30px;	left:19px;	z-index:3;}
+.sceptre #lame {    	width:10px;    	height: 0;      	position:absolute;	top:0px;	left:10px;	z-index:2;
+    border-style: solid;
+    border-color: transparent transparent gray transparent;
+    border-width: 0 10px 10px 10px;
+    margin: 7px 0 25px 0;
+}
+.sceptre #lame:after {    width: 0;    height: 0;    position:absolute;    top: 10px;    left: -10px;
+    content: "";
+    border-style: solid;
+    border-color: gray transparent transparent transparent;
+    border-width: 30px 15px 0 15px;
+}
+
+
+/**
+
+"","","","","","
+**/

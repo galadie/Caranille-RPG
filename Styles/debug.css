@@ -1,0 +1,274 @@
+
+		.debug_screen {
+			position: absolute;
+			z-index:90000;
+			width: 490px;
+			height:600px;
+			padding: 10px;
+			background: #6B9A49; 
+			color: #000;	
+		}
+		
+		.debug_screen .volet{ width:90%;height:85%;overflow:auto;margin-left:54px;text-align:left;}
+		
+		.debug_screen a.ouvrir,
+		.debug_screen a.fermer {
+			position: absolute;
+			z-index:100000;
+			padding: 10px 25px;
+			margin:auto;
+			background: #555;
+			color: #fff;
+			text-decoration: none;
+			/**right: -88px; --**/  
+			left:480px;
+			width:50px;
+			height:15px;
+			-webkit-transform: rotate(270deg);
+			-moz-transform: rotate(270deg);
+			-o-transform: rotate(270deg);
+			-ms-transform: rotate(270deg);
+			-moz-radius: /*0 0 8px*/ 8px;
+			border-radius: /*0 0 8px*/ 8px;
+		}
+
+		.debug_screen a.ouvrir.line2,
+		.debug_screen a.fermer .line2{
+			left:516px;
+		}
+		#debug_log {
+			left: -520px;  /* test fixed + scroll, on retire la position top */
+			-webkit-transition: all .5s ease-in;
+			-moz-transition: all .5s ease-in;
+			transition: all .5s ease-in;
+		}
+		#debug_log a.ouvrir,
+		#debug_log a.fermer {	top: 32px;		}
+		#debug_log a.fermer {	display: none;	}
+		#debug_log:target {		left: 50px;		}
+
+		/* code pour la fermeture */
+
+		#debug_log:target a.fermer {			display: block;		}
+		#debug_log:target a.ouvrir {			display: none;		}
+		#debug_log_clos:target #debug_log {	left: -520px;		}
+		
+		
+		
+		#debug_perso {
+			left: -520px;  /* test fixed + scroll, on retire la position top */
+			-webkit-transition: all .5s ease-in;
+			-moz-transition: all .5s ease-in;
+			transition: all .5s ease-in;
+		}
+		#debug_perso a.ouvrir,
+		#debug_perso a.fermer {			top: 132px;		}
+		#debug_perso a.fermer {			display: none;		}
+		#debug_perso:target {			left: 50px;		}
+
+		/* code pour la fermeture */
+
+		#debug_perso:target a.fermer {			display: block;		}
+		#debug_perso:target a.ouvrir {			display: none;		}
+		#debug_perso_clos:target #debug_perso {	left: -520px;		}
+		
+		
+		#debug_session {
+			left: -520px;  /* test fixed + scroll, on retire la position top */
+			-webkit-transition: all .5s ease-in;
+			-moz-transition: all .5s ease-in;
+			transition: all .5s ease-in;
+		}
+		#debug_session a.ouvrir,
+		#debug_session a.fermer {		top: 232px;		}
+		#debug_session a.fermer {		display: none;		}
+		#debug_session:target {			left: 50px;		}
+
+		/* code pour la fermeture */
+
+		#debug_session:target a.fermer {			display: block;		}
+		#debug_session:target a.ouvrir {			display: none;		}
+		#debug_session_clos:target #debug_session {	left: -520px;		}
+
+		
+		#debug_sql {
+			left: -520px;  /* test fixed + scroll, on retire la position top */
+			-webkit-transition: all .5s ease-in;
+			-moz-transition: all .5s ease-in;
+			transition: all .5s ease-in;
+		}
+		#debug_sql a.ouvrir,
+		#debug_sql a.fermer {			top: 332px;		}
+		#debug_sql a.fermer {			display: none;		}
+		#debug_sql:target {			left: 50px;		}
+
+		/* code pour la fermeture */
+
+		#debug_sql:target a.fermer {			display: block;		}
+		#debug_sql:target a.ouvrir {			display: none;		}
+		#debug_sql_clos:target #debug_sql {	left: -520px;		}
+		
+		#debug_server {
+			left: -520px;  /* test fixed + scroll, on retire la position top */
+			-webkit-transition: all .5s ease-in;
+			-moz-transition: all .5s ease-in;
+			transition: all .5s ease-in;
+		}
+		#debug_server a.ouvrir,
+		#debug_server a.fermer {			top: 432px;		}
+		#debug_server a.fermer {			display: none;		}
+		#debug_server:target {			left: 50px;		}
+
+		/* code pour la fermeture */
+
+		#debug_server:target a.fermer {			display: block;		}
+		#debug_server:target a.ouvrir {			display: none;		}
+		#debug_server_clos:target #debug_server {			left: -520px;		}
+	
+		#debug_function {
+			left: -520px;  /* test fixed + scroll, on retire la position top */
+			-webkit-transition: all .5s ease-in;
+			-moz-transition: all .5s ease-in;
+			transition: all .5s ease-in;
+		}
+		#debug_function a.ouvrir,
+		#debug_function a.fermer {	top: 532px;		}
+		#debug_function a.fermer {	display: none;	}
+		#debug_function:target {		left: 50px;		}
+
+		/* code pour la fermeture */
+
+		#debug_function:target a.fermer {			display: block;		}
+		#debug_function:target a.ouvrir {			display: none;		}
+		#debug_function_clos:target #debug_function {	left: -520px;		}
+	
+		
+		
+		#debug_warning {
+			left: -520px;  /* test fixed + scroll, on retire la position top */
+			-webkit-transition: all .5s ease-in;
+			-moz-transition: all .5s ease-in;
+			transition: all .5s ease-in;
+		}
+		#debug_warning a.ouvrir,
+		#debug_warning a.fermer {		top: 32px;		}
+		#debug_warning a.fermer {		display: none;		}
+		#debug_warning:target {			left: 50px;		}
+
+		/* code pour la fermeture */
+
+		#debug_warning:target a.fermer {			display: block;		}
+		#debug_warning:target a.ouvrir {			display: none;		}
+		#debug_warning_clos:target #debug_warning {	left: -520px;		}
+		
+		#debug_notice {
+			left: -520px;  /* test fixed + scroll, on retire la position top */
+			-webkit-transition: all .5s ease-in;
+			-moz-transition: all .5s ease-in;
+			transition: all .5s ease-in;
+		}
+		#debug_notice a.ouvrir,
+		#debug_notice a.fermer {			top: 132px;		}
+		#debug_notice a.fermer {			display: none;		}
+		#debug_notice:target {			left: 50px;		}
+
+		/* code pour la fermeture */
+
+		#debug_notice:target a.fermer {			display: block;		}
+		#debug_notice:target a.ouvrir {			display: none;		}
+		#debug_notice_clos:target #debug_notice {			left: -520px;		}
+		
+		
+		#debug_unknow {
+			left: -520px;  /* test fixed + scroll, on retire la position top */
+			-webkit-transition: all .5s ease-in;
+			-moz-transition: all .5s ease-in;
+			transition: all .5s ease-in;
+		}
+		#debug_unknow a.ouvrir,
+		#debug_unknow a.fermer {			top: 232px;		}
+		#debug_unknow a.fermer {			display: none;		}
+		#debug_unknow:target {			left: 50px;		}
+
+		/* code pour la fermeture */
+
+		#debug_unknow:target a.fermer {			display: block;		}
+		#debug_unknow:target a.ouvrir {			display: none;		}
+		#debug_unknow_clos:target #debug_unknow {			left: -520px;		}
+		
+		#debug_file {
+			left: -520px;  /* test fixed + scroll, on retire la position top */
+			-webkit-transition: all .5s ease-in;
+			-moz-transition: all .5s ease-in;
+			transition: all .5s ease-in;
+		}
+		#debug_file a.ouvrir,
+		#debug_file a.fermer {			top: 332px;		}
+		#debug_file a.fermer {			display: none;		}
+		#debug_file:target {			left: 50px;		}
+
+		/* code pour la fermeture */
+
+		#debug_file:target a.fermer {			display: block;		}
+		#debug_file:target a.ouvrir {			display: none;		}
+		#debug_file_clos:target #debug_file {			left: -520px;		}
+		
+		
+		#debug_request {
+			left: -520px;  /* test fixed + scroll, on retire la position top */
+			-webkit-transition: all .5s ease-in;
+			-moz-transition: all .5s ease-in;
+			transition: all .5s ease-in;
+		}
+		#debug_request a.ouvrir,
+		#debug_request a.fermer {			top: 432px;		}
+		#debug_request a.fermer {			display: none;		}
+		#debug_request:target {			left: 50px;		}
+
+		/* code pour la fermeture */
+
+		#debug_request:target a.fermer {			display: block;		}
+		#debug_request:target a.ouvrir {			display: none;		}
+		#debug_request_clos:target #debug_request {			left: -520px;		}
+		
+		#debug_constants {
+			left: -520px;  /* test fixed + scroll, on retire la position top */
+			-webkit-transition: all .5s ease-in;
+			-moz-transition: all .5s ease-in;
+			transition: all .5s ease-in;
+		}
+		#debug_constants a.ouvrir,
+		#debug_constants a.fermer {			top: 532px;		}
+		#debug_constants a.fermer {			display: none;		}
+		#debug_constants:target {			left: 50px;		}
+
+		/* code pour la fermeture */
+
+		#debug_constants:target a.fermer {			display: block;		}
+		#debug_constants:target a.ouvrir {			display: none;		}
+		#debug_constants_clos:target #debug_constants {			left: -520px;		}
+		
+		#debug_vars {
+			left: -520px;  /* test fixed + scroll, on retire la position top */
+			-webkit-transition: all .5s ease-in;
+			-moz-transition: all .5s ease-in;
+			transition: all .5s ease-in;
+		}
+		#debug_vars a.ouvrir,
+		#debug_vars a.fermer {			top: 632px;		}
+		#debug_vars a.fermer {			display: none;		}
+		#debug_vars:target {			left: 50px;		}
+
+		/* code pour la fermeture */
+
+		#debug_vars:target a.fermer {			display: block;		}
+		#debug_vars:target a.ouvrir {			display: none;		}
+		#debug_vars_clos:target #debug_vars {			left: -520px;		}
+		
+		 /* test fixed + scroll */
+		.debug_screen_clos {
+			position: fixed; 
+			top: 0px; 
+			left: 0;
+			z-index:99;
+		}

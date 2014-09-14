@@ -1,0 +1,18 @@
+.city-menu
+{
+	min-height:50px;
+	line-height:25px;
+}
+/** update by Dimitri graphisme des batiments : menu de ville affichés sur 1 ligne **/
+.city-menu a
+{ 
+    display:inline-block;
+    width:65px;
+	color:red;
+	background-color:white;
+	border:1px solid green;
+	border-radius:20px;
+	text-align:center;
+	padding:auto;
+	text-decoration:none;
+}

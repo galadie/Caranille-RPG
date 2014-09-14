@@ -1,0 +1,10 @@
+/*** forum **/
+.titre { width:60%;border:1px solid red; }
+.nombremessages { width:2%; border:1px solid red; }
+.nombrevu { width:4%;border:1px solid red;  }
+.nombresujets { width:2%; border:1px solid red; }
+.auteur { width:7%; border:1px solid red;  }
+.derniermessage { width:15%; border:1px solid red; }
+.categorie { width:90%; background-color : rgb(244,238,250); }
+
+.guild-forum_bbcode_editor textarea { height:50px; }

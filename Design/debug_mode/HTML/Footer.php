@@ -1,0 +1,1 @@
+&copy; Caranille <?php print date("Y") ?>

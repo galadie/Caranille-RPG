@@ -1,0 +1,28 @@
+
+/** update by Dimitri design de la page Order : Ordres sur les cotés **/
+.Ordre
+{
+	border:1px solid;
+	display:block;
+	width:140px;
+	height:270px;
+	margin:10px;
+	position:relative;
+}
+
+article div.Ordre form
+{
+	position:absolute;
+	bottom : 10px;
+	margin : 30px;
+}
+
+#Ange.Ordre
+{
+	float:left;
+}
+
+#Demon.Ordre
+{
+	float:right;
+}

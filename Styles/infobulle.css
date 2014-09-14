@@ -1,0 +1,72 @@
+
+a.infobulle{
+position:relative;
+z-index:924;
+color:#ccc;
+text-shadow:0 -1px 0 black;                
+}
+ 
+a.infobulle:hover{
+z-index:25;
+     background:rgba(0,0,0,.4);
+     box-shadow:0 1px 0 rgba(255,255,255,.4);
+}
+ 
+a.infobulle span{
+display: none
+}
+ 
+a.infobulle:hover span{
+display:inline-block;
+position:absolute;
+z-index:930;
+top:2em; left:2em; width:15em;
+border:1px solid #000;
+text-align: justify;
+font-weight:none;
+padding:5px;
+color:#09c;
+margin-top:-123px;
+    margin-left:15px;
+    background:rgba(0,0,0,.9);
+      border-radius:3px;
+     box-shadow:0 0 2px rgba(0,0,0,.5);
+ transform:scale(1) rotate(0);   
+transition:all .25s; 
+    opacity:1;  
+}
+/**
+a.infobulle span:after
+{
+  content: "";
+  position: absolute;
+  z-index: 1000;
+  right: -7px;
+  left: 50%;
+  margin-left: -8px;
+  border-top: 8px solid #ddd;
+  border-left: 8px solid transparent;
+  border-bottom: 8px solid transparent;
+  border-right: 0;
+}
+
+
+a.infobulle span:before
+{
+  border-top-color: #ccc;
+  right: -8px;
+}
+a.infobulle span{
+	position:absolute;      
+	
+	padding:15px;
+    transform:scale(0) rotate(-12deg);
+    
+    opacity:0;
+	
+}
+
+a.infobulle:hover span, a.infobulle:focus span{
+    
+}
+**/

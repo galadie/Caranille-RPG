@@ -1,0 +1,454 @@
+/**update by dimitri : schema d'equipement **/
+
+	table#corps
+	{
+		width:70px;
+		border:none;
+		margin:auto 40px ;
+		border-collapse:collapse;
+		position:relative;
+	}
+
+	table.arena#corps
+	{
+		float:left;
+	}
+
+	table.account#corps
+	{
+		float:right;
+	}
+
+	#corps td
+	{
+		border:none;
+		margin:0;
+		padding:0
+	}
+
+	#corps div
+	{
+		border:1px solid black; 
+		display:block;
+		margin:auto;
+		padding:0;
+		box-shadow: 2px 2px 3px #aaa;
+		background-color:black;
+	}
+
+
+	#corps .equiped
+	{
+		background-image:-webkit-linear-gradient(top, grey 0%, white 100%);
+		background-image: linear-gradient(to bottom, grey 0%, white 100%);
+	}
+
+	#corps #tete
+	{ 
+		height: 40px;
+		width: 35px;	
+		border-radius: 40px;
+		position:relative;
+		z-index:200px;
+	}
+
+	#corps #tete.equiped
+	{
+		width: 40px;	
+	}
+	
+	#corps #tete.equiped.tissus
+	{
+		height: 50px;
+	}
+
+	#tete #visage
+	{
+		border:none;
+		background:white;
+		border-bottom-left-radius: 40px;
+		border-bottom-right-radius: 40px;
+		border-top-left-radius: 10px;
+		border-top-right-radius: 10px;
+
+		height: 30px;
+		width: 29px;
+		
+		line-height:9px;
+		font-size:8px;
+		text-align:center;
+		vertical-align:middle;
+		
+		
+		top:10px;
+		left:3px;
+		position:absolute;
+	}
+	
+	#corps #tete.equiped #visage
+	{
+		left:5px;
+	}
+
+	#tete #visage br
+	{
+		font-size:10px;height:10px;margin:0px;padding:0px
+	}
+
+	#corps #neck
+	{
+		width: 15px;
+		height: 15px;
+		position:relative;
+		z-index:2;
+	}
+	#corps #neck:after {
+		content: "";
+		position: absolute;
+		z-index:1;
+		bottom: -3px;
+		right: -17px;
+		width: 0;
+		height: 0;
+		border-left: 25px solid transparent;
+		border-right: 25px solid transparent;
+		border-bottom: 15px solid black;
+	}
+
+	#corps .epaule
+	{
+		height:15px; 
+		width:15px;
+	}
+
+	#corps .epaule .equiped
+	{
+		width:20px;
+	}
+
+	#corps td.epaule div.Droit
+	{
+		border-top-left-radius: 20px;
+		width: 100%;
+		height: 100%;
+	}
+
+	#corps td.epaule div.Gauche
+	{
+		border-top-right-radius: 20px;
+		width: 100%;
+		height: 100%;
+	}
+
+	#corps #buste
+	{ 
+		height: 15px;
+		width: 50px;
+		position:relative;
+		border:none;
+	}
+
+	#corps.homme #buste
+	{ 
+		width: 60px;
+	}
+
+	#corps #buste.equiped
+	{
+		width:55px;
+	}
+	
+	#corps #poitrine
+	{ 
+		height: 20px;
+		position:relative
+	}
+
+	#corps.femme #poitrine
+	{ 
+		width: 48px;
+	}
+
+	#corps.homme #poitrine
+	{ 
+		width: 60px;
+		border-bottom-right-radius: 6px;
+		border-bottom-left-radius: 6px;
+	}
+
+	#corps.femme #poitrine.equiped
+	{
+		background:black;
+	}
+	
+	#corps.femme #poitrine:before,
+	#corps.femme #poitrine:after 
+	{
+		z-index:20;
+		position: absolute;
+		content: "";
+		left: 45px;
+		top: 5px;
+		width: 25px;
+		height: 20px;
+		background: #069;
+		-moz-border-radius: 0 0 50px 50px ;
+		     border-radius: 0 0 50px 50px ;
+		-webkit-transform: rotate(-45deg);
+		   -moz-transform: rotate(-45deg);
+			-ms-transform: rotate(-45deg);
+			 -o-transform: rotate(-45deg);
+				transform: rotate(-45deg);
+		-webkit-transform-origin: 0 100%;
+		   -moz-transform-origin: 0 100%;
+			-ms-transform-origin: 0 100%;
+			 -o-transform-origin: 0 100%;
+				transform-origin: 0 100%;
+	}
+
+	#corps.femme #poitrine:after 
+	{
+		left: -23px;
+		-webkit-transform: rotate(45deg);
+		   -moz-transform: rotate(45deg);
+			-ms-transform: rotate(45deg);
+			 -o-transform: rotate(45deg);
+				transform: rotate(45deg);
+		-webkit-transform-origin: 100% 100%;
+		   -moz-transform-origin: 100% 100%;
+			-ms-transform-origin: 100% 100%;
+			 -o-transform-origin: 100% 100%;
+				transform-origin :100% 100%;
+	}
+
+	#corps.femme #poitrine.equiped:before ,
+	#corps.femme #poitrine.equiped:after 
+	{
+		background: grey;
+		top:9px;
+		left:41px;
+	}
+	
+	#corps.femme #poitrine.equiped:after 
+	{
+		left:-18px;
+	}
+	#corps #abdomen
+	{ 
+		width: 50px;
+	}
+
+	#corps #abdomen
+	{ 
+		height: 38px;
+	}
+
+	#corps.femme #abdomen {
+		width: 0;
+		height: 0;
+		border-left: 25px solid transparent;
+		border-right: 25px solid transparent;
+		border-bottom: 39px solid black;
+		position: relative;
+		background-color: transparent;
+	}
+	#corps.femme #abdomen:after {
+		width: 0;
+		height: 0;
+		border-left: 25px solid transparent;
+		border-right: 25px solid transparent;
+		border-top: 93px solid black;
+		position: absolute;
+		content: "";
+		top: -1px;
+		left: -25px;
+	}
+	#corps.femme #abdomen.equiped:after
+	{
+		border-top: 93px solid grey;
+	}
+	
+	#corps .bras{
+		height:60px; 
+		width:10px;
+	}
+
+	#corps .poing{
+		height:20px; 
+		width:10px;
+		vertical-align:top;
+	}
+
+	#corps .bras.equiped
+	{
+		width:15px;
+	}
+	#corps .avant.bras
+	{
+		vertical-align:top;
+	}
+
+	#corps #ceinture
+	{
+		position: relative;
+		height:10px; 
+		width:50px;
+	}
+	
+	#corps #ceinture.equiped.tissus {
+		height:11px; 
+		width:51px;
+		background-color:grey;
+		background-image:none;
+		border:none;
+		
+	}
+	#corps #ceinture.equiped {
+		height:11px; 
+		width:51px;
+		background-image:-webkit-linear-gradient(top, white 0%,  grey 100%);
+		background-image: linear-gradient(to bottom, white 0%,  grey 100%);
+		border:none;
+		
+	}
+
+	
+	
+	#corps #ceinture:after{
+		content:'';
+		border: 0px solid #069;
+		border-left: 25px solid transparent;
+		border-right: 25px solid transparent;
+		border-top: 25px solid #069;
+		width:0;
+		height:0;
+		position: absolute;
+		top:11px;
+		left:0px;
+		z-index:10;
+	}
+
+	#corps #ceinture.equiped:after
+	{
+		border-top-color:grey;
+	}
+	
+	#corps #cuisse-gauche,
+	#corps #cuisse-droite
+	{
+		height:85px; 
+		width:20px;
+	}
+
+	#corps.femme #cuisse-gauche,
+	#corps.femme #cuisse-droite 
+	{
+		width:10px;
+		position:relative;
+	}
+
+	#corps #cuisse-gauche {float:left;}
+	#corps #cuisse-droite {float:right;}
+
+	#corps.femme #cuisse-gauche:before,
+	#corps.femme #cuisse-droite:after 
+	{
+		content: "";
+		border: 0px solid black;
+		border-top: 85px solid black; 
+		position: absolute;
+		width:0;
+		height:0;
+		
+	}
+
+	#corps.femme #cuisse-gauche.equiped:before,
+	#corps.femme #cuisse-droite.equiped:after 
+	{
+		border-top-color:grey;
+	}
+	
+	#corps.femme #cuisse-gauche.equiped.tissus,
+	#corps.femme #cuisse-droite.equiped.tissus 
+	{
+		border-color:grey;
+		background-color:grey;
+		background-image:none;
+	}
+	
+	#corps.femme #cuisse-gauche:before 
+	{
+		border-right : 10px solid transparent;
+		left:10px;
+	}
+
+	#corps.femme #cuisse-droite:after {
+		border-left: 10px solid transparent;
+		right:10px;
+	}
+
+	#corps.homme .cuisse.equiped
+	{
+		width:25px;
+	}
+
+	#corps .cuisse.Droit.equiped
+	{	
+		border-top-right-radius: 40px;
+	}
+	#corps .cuisse.Gauche.equiped
+	{	
+		border-top-left-radius: 40px;
+	}
+
+	#corps .jambes
+	{
+		height:85px; 
+		width:20px;
+	}
+
+	#corps.femme .jambes
+	{
+		height:85px; 
+		width:10px;
+	}
+	#corps .jambes.Gauche {float:left;}
+	#corps .jambes.Droit {float:right;}
+
+	#corps .jambes.equiped
+	{
+		width:25px;
+	}
+
+	#corps.femme .jambes.equiped
+	{
+		width:12px;
+	}
+
+	#corps.femme .jambes.equiped.tissus
+	{
+		border:grey;
+	}
+	
+	#corps .pieds
+	{
+		height:10px; 
+		width:33px;
+	}
+
+	#corps.femme .pieds
+	{
+		height:10px; 
+		width:23px;
+	}
+
+	#corps .Droit.pieds
+	{
+		float:right;  
+		border-top-left-radius: 20px;
+	}
+	#corps .Gauche.pieds
+	{
+		float:left;   
+		border-top-right-radius: 20px;
+	}
