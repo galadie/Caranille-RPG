@@ -40,6 +40,11 @@
 			}
 			echo '</select><br/>';
 			
+			echo '<div class="important">Activer la debug-barre?</div><br />';
+			echo '<input '.($active_debug == 1 ? '' : 'checked' ).' type="radio" name="active_debug" value="1" ID="Yes" /> <label for="Yes">Oui</label>';
+			echo '<input '.($active_debug == 0 ? 'checked' : '' ).' type="radio" name="active_debug" value="0" ID="No" /> <label for="No">Non</label><br /><br />';
+		
+			
 			echo "<h2>Bonus</h2>";			
 			echo "Bonus de degats en combat<input type='number' step='0.01' name='bonus_malus_battle' value='$bonus_malus_battle' /><br/>";
 			echo "Bonus de prospection<input type='number' step='0.01' name='bonus_malus_prospection' value='$bonus_malus_prospection' /><br/>";

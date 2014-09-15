@@ -1,9 +1,9 @@
 <?php
 function debug_log($text)//,$trace = true 
 {
-	global $debug_log_array ;
+	global $debug_log_array, $active_debug ;
 
-	if($text !="")
+	if($text !="" && $active_debug )
 	{
 		$log['message'] = $text ;
 		/**if($trace)**/$log['trace'] = debug_backtrace() ;//[1];
@@ -14,9 +14,9 @@ function debug_log($text)//,$trace = true
 
 function show_debug($ID,$title,$content,$line=1)
 {
-	global $installing;
+	global $installing, $active_debug;
 	
-	if($installing || verif_access("Admin",true)) 
+	if($installing || (verif_access("Admin",true) && $active_debug )) 
 	{	
 		$html =""; 
 		$html .= '<div class="debug_screen_clos" id="debug_'.$ID.'_clos">';
@@ -36,9 +36,9 @@ function show_debug($ID,$title,$content,$line=1)
 
 function debug_array($s= array())
 {
-	global $installing;
+	global $installing, $active_debug;
 	
-	if($installing || verif_access("Admin",true)) 
+	if($installing || (verif_access("Admin",true) && $active_debug )) 
 	{	
 		$html =""; 
 		$html .= "<table border='1'>";
@@ -63,9 +63,9 @@ function debug_array($s= array())
 
 function debug_screen()
 {
-	global $debug_log_array , $debug_warning_array , $debug_notice_array , $debug_unknow_array,  $debug_sql_array, $debug_sql_error ,$_path , $Account_Data , $Stats_Data,  $installing;
+	global $debug_log_array , $debug_warning_array , $debug_notice_array , $debug_unknow_array,  $debug_sql_array, $debug_sql_error ,$_path , $Account_Data , $Stats_Data,  $installing, $active_debug;
 	
-	if($installing || verif_access("Admin",true)) 
+	if($installing || (verif_access("Admin",true) && $active_debug ))
 	{	
 		$html =""; 
 		$corrig_path = str_replace("/",'\\',$_path);

@@ -65,6 +65,7 @@ if(!$installing)
 	}
 
 	require_once($core_path."/Refresh.php");
+    require_once($core_path."/Menu.php");
 
 	$_menu_ = list_pages();
 }

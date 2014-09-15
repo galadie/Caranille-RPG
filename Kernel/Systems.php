@@ -1596,6 +1596,26 @@ function log_files($dir,$file,$content)
 }
 
 
+function call_menu_content($menu="Install",$rub="Install")
+{
+    global $menu_mapping ;
+    
+    if(isset($menu_mapping[$menu]))
+    {
+        if(isset($menu_mapping[$menu][$rub]))
+        {
+            return $menu_mapping[$menu][$rub] ;
+        }
+        else
+        {
+            return $menu_mapping[$menu] ;
+        }
+    }
+    else
+        return $menu_mapping['visitor'] ;
+    
+}
+
 
 function init_popIn($ID,$title,$content,$class="")
 {

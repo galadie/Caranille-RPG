@@ -138,7 +138,7 @@
 		return $input ;
 	}
 	
-	function text_input($label,$name,$value=null,$class=null,$id=null,$placeholder=null,$length=null,$readonly=true)
+	function text_input($label,$name,$value=null,$class=null,$id=null,$placeholder=null,$length=null,$readonly=false)
 	{
 		$input = "<div class='line-input";
 		$input .= (is_null($class) ? "" : " ".$class);
