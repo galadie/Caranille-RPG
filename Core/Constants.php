@@ -407,7 +407,7 @@ $language_codes = array(
 
 	$_medical_functions = array("Health","Poison","Booster");
 	
-	$array_inventory_2_type = array("Magic","Item","Invocation","Parchment","Craft");
+	$array_inventory_2_type = array("Magic","Item","Invocation","Parchment","Craft","Ress");
 	
 	$array_accessory_type = array( "Armor","Gloves","Boots","Helmet","Pants");
 	$array_weapon_type = array("sword","dagues","hammer","espadon","arc","lance","baton","sceptre","disque");		

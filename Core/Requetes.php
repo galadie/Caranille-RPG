@@ -104,9 +104,11 @@
     where (Account_PosX between [compteurX] and [finX]) 
     and (Account_PosY between [finY] and [compteurY] );	";
 	
-	$sql['account_work'] = "SELECT w.Work_Name,w.Work_Fabrique, c.Competence_Level
+	$sql['account_work'] = "SELECT w.Work_Name,w.Work_Fabrique, c.Competence_Work_ID , c.Competence_Level,c.Competence_Experience, lu.Level_Experience_Required 
 		from Caranille_Works w
 		left join Caranille_Competences c on c.Competence_Work_ID = w.Work_ID 
+		left join Caranille_Levels l ON c.Competence_Level = l.Level_Number 
+		left join Caranille_Levels lu ON lu.Level_Number = (l.Level_Number+1)
 		where c.Competence_Account_ID=[Account_ID]";
 	
 	$sql['account_work_competence'] = "SELECT w.Work_Name,w.Work_Fabrique, c.*
@@ -441,6 +443,11 @@
 			left join Caranille_Fragments i ON inv.Inventory_Fragment_ID = i.Fragment_ID
 			left Join Caranille_Images img ON img.Image_ID = i.Fragment_Image_ID
 			WHERE Inventory_Account_ID = [Account_ID] ORDER BY Fragment_Name";
+	
+	$sql['list_inventaire_ressource']="SELECT * FROM Caranille_Inventory_Ressources inv 
+			left join Caranille_Ressources i ON inv.Inventory_Ressource_ID = i.Ressource_ID
+			left Join Caranille_Images img ON img.Image_ID = i.Ressource_Image_ID
+			WHERE Inventory_Account_ID = [Account_ID] ORDER BY Ressource_Name";
 			
 	// Shop
 	

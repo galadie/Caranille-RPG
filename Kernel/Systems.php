@@ -25,20 +25,21 @@ function _mod_rewrite()
 	
 	if(isset($_SERVER['HTTP_MOD_REWRITE']))
 	{
-		//echo "l'info est indiqué dans la Globale _SERVER_ ...<br/>";
+		debug_log("l'info est indiqué dans la Globale _SERVER_ ...");
+		
 		if (getenv('HTTP_MOD_REWRITE') === 'On')
 		{
-			//echo "mod_rewrite activé<br/>";
+			debug_log("mod_rewrite activé");
 			return true;			
 		}
 		else
 		{
-			//echo "mod_rewrite desactivé<br/>";
+			debug_log("mod_rewrite desactivé");
 		}
 	}
 	else
 	{
-		//echo "l'info n'est pas indiqué dans la Globale _SERVER_ ...<br/>";
+		debug_log("l'info n'est pas indiqué dans la Globale _SERVER_ ...");
 	}
 	//if (strpos(shell_exec('/usr/local/apache/bin/apachectl -l'), 'mod_rewrite') !== false)
 	//	return true;

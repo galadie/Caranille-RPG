@@ -281,6 +281,15 @@ function nouveautes()
 				<li>sexe du personnage</li>
 		    </ul>
 		</li>
+		<br/>
+		<li>systeme de metier pour la fabrication d'objet
+			<ul>
+			    <li>exp de metier</li>
+				<li>liaison à un metier de recolte</li>
+				<li>recoltes de ressources( rubrique ressources dans inventaire)</li>
+			</ul>
+		</li>
+
 	</ul>
 
 </div>
@@ -321,9 +330,6 @@ function avenir()
 	<ul>
 		<li>systeme de metier pour la fabrication d'objet
 			<ul>
-			    <li>exp de metier</li>
-				<li>recoltes de ressources</li>
-				<li>liaison à un metier de recolte</li>
 				<li>combinaison des fragments en objet</li>
 			</ul>
 		</li>

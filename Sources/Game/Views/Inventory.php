@@ -197,6 +197,66 @@
 			echo '</table>';
 		}
 
+if(request_confirm('Ress'))
+		{
+    		echo 'Voici vos Fragments<br /><br />';
+    		echo '<table class="inventory">';
+    		echo '<tr>';
+    
+    		echo '<th>'.LanguageValidation::iMsg("label.inventory.name").'</th>';
+     		echo '<th>'.LanguageValidation::iMsg("label.inventory.image").'</th>';
+			echo '<th>'.LanguageValidation::iMsg("label.inventory.quantite").'</th>';
+    		echo '<th>'.LanguageValidation::iMsg("label.inventory.price").'</th>';
+    		echo '<th>'.LanguageValidation::iMsg("label.inventory.action").'</th>';
+    
+    		echo '</tr>';
+			
+    		$Ressource_Query = list_db('list_inventaire_ressource', array('Account_ID' =>user_data('Account_ID') ));
+			
+			
+			if(!empty($Ressource_Query))
+			{
+				foreach ($Ressource_Query as $Ressource)
+				{
+					extract(stripslashes_r($Ressource));
+					
+					$desc = $Ressource_Description."\r\n\r\n";
+					
+					$desc .= ''.LanguageValidation::iMsg("label.level.required").' : ' .$Ressource_Level_Required."\r\n\r\n";
+					
+					foreach($array_character_type as $char)
+						$desc .= '+' .eval("return \$Fragment_".$char."_Effect ;"). ' '.LanguageValidation::iMsg("label.".strtolower($char).".card").''."\r\n";//<br />';
+
+/**					
+					$desc .= '+' .$Fragment_HP_Effect. ' HP'."\r\n";//<br />';
+					$desc .= '+' .$Fragment_MP_Effect. ' MP'."\r\n";//<br />';
+					$desc .= '+' .$Fragment_Strength_Effect. ' Force'."\r\n";//<br />';
+					$desc .= '+' .$Fragment_Magic_Effect. ' Magie'."\r\n";//<br />';
+					$desc .= '+' .$Fragment_Agility_Effect. ' Agilité'."\r\n";//<br />';
+					$desc .= '+' .$Fragment_Defense_Effect. ' Defense'."\r\n";//';
+**/				
+					echo "<tr>";
+					echo '<td>' .$Ressource_Name. '</td>'; // title=""
+					echo "<td><a class='infobulle' href='#'>";
+					echo "<img title='".$Ressource['Image_Name']."' height='50px' src='data:".$Ressource['Image_Type'].";base64,".$Ressource['Image_Base64']."' />";
+					echo '<span>'.nl2br($desc).'</span></a>';
+					echo "</td>";
+					echo '<td>' .$Inventory_Ressource_Quantity. '</td>';
+					echo '<td>' .render_money($Ressource_Sale_Price). '</td>';
+
+					echo '<td>';
+					echo '<form method="POST" action="'.get_link('Inventory','Game').'">';
+					echo "<input type=\"hidden\" name=\"Inventory_ID\" value=\"$Inventory_ID\">";
+					echo "<input type=\"hidden\" name=\"Item_ID\" value=\"$Item_ID\">";		
+					echo '<input type="submit" name="Sale" value="'.LanguageValidation::nMsg("btn.inventory.Item_sell").'"/>'.LanguageValidation::eMsg("btn.inventory.Item_sell");//Vendre"><br /><br />';
+					echo '</form>';
+					echo '</td>';
+					echo '</tr>';
+				}
+			}
+			echo '</table>';
+		}
+
 		if (request_confirm('Craft'))
     	{
     		echo 'Voici vos Fragments<br /><br />';

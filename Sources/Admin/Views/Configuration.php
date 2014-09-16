@@ -8,7 +8,7 @@
 			echo '<input type="submit" name="accueil_configuration" value="Continuer">';
 			echo '</form>';
 		}
-		else//if (empty($_POST['End_Edit']))
+		else //if (empty($_POST['End_Edit']))
 		{
 			if($dossier = opendir($_path.'/Design'))
 			{
