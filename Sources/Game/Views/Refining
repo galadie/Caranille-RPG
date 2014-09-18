@@ -1,0 +1,59 @@
+<?php
+    	if(verif_connect())
+    	{
+		    menu_town();
+		
+    		$Ressource_Query = list_db('list_inventaire_ressource', array('Account_ID' =>user_data('Account_ID') ));
+	    		
+	         if(!empty($Ressource_Query))
+			{
+                echo 'Voici vos Ressources<br /><br />';
+        		echo '<table class="inventory">';
+        		echo '<tr>';
+        
+        		echo '<th>'.LanguageValidation::iMsg("label.inventory.name").'</th>';
+         		echo '<th>'.LanguageValidation::iMsg("label.inventory.image").'</th>';
+    			echo '<th>'.LanguageValidation::iMsg("label.inventory.quantite").'</th>';
+    			
+        		//echo '<th>'.LanguageValidation::iMsg("label.inventory.action").'</th>';
+        
+        		echo '</tr>';
+			
+			    foreach ($Ressource_Query as $Ressource)
+				{
+					extract(stripslashes_r($Ressource));
+								
+					$k = array_search($Ressource_Fabrique,$array_work_class['recolte']);
+					
+					$Fragment_Fabrique = $array_work_class['transformation'][$k] ;
+					
+					$Fragment_Query = list_db('list_frabriquable', array('Fragment_Fabrique' => $Fragment_Fabrique));
+					
+					echo "<tr>";
+					echo '<td>' .$Ressource_Name. '</td>'; // title=""
+					echo "<td>";
+					echo "<img title='".$Ressource['Image_Name']."' height='50px' src='data:".$Ressource['Image_Type'].";base64,".$Ressource['Image_Base64']."' />";
+					echo "</td>";
+					echo '<td>' .$Inventory_Ressource_Quantity. '</td>';
+					echo '<td>' .$Ressource_Fabrique. '</td>';
+					echo '<td>' .$Fragment_Fabrique. '</td>';
+                    echo '<td>' ;
+					if(!empty($Fragment_Query))
+					{
+						echo '<form method="POST" action="'.get_link('refining','Game').'">';
+						echo "<select name='fragment_from[$Ressource_ID]'>";
+						echo "<option>Select.</option>";
+						foreach($Fragment_Query as $f)
+						{
+							echo "<option value='".$f['Fragment_ID']."'>".$f['Fragment_Name']."</option>" ;
+						}
+						echo "</select>";
+						echo '<input type="submit" name="refining['.$Ressource_ID.']" value="'.LanguageValidation::nMsg("btn.refining.launch").'"/>'.LanguageValidation::eMsg("btn.refining.launch");//Vendre"><br /><br />';
+						echo '</form>';
+					}
+					echo'</td>';			
+                    echo '</tr>';
+				}
+			}
+			echo '</table>';
+    	}
