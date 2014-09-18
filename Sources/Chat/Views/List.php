@@ -1,6 +1,7 @@
 <?php		
 		$Messages_Q = list_db('public_chatroom');
 		
+		echo '<base target="_parent">';
 		echo '<meta http-equiv="refresh" content="5;URL='.get_link('list','chat').'">';
 		
 		if(!empty($Messages_Q))
