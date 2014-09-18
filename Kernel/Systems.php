@@ -9,12 +9,12 @@ function _mod_rewrite()
 		
 		if(in_array('mod_rewrite',apache_get_modules()))
 		{
-			debug_log("mod_rewrite activé");
+			debug_log("mod_rewrite activÃ©");
 			return true ;
 		}
 		else
 		{
-			debug_log("mod_rewrite desactivé");
+			debug_log("mod_rewrite desactivÃ©");
 		}
 	}
 	else
@@ -25,21 +25,21 @@ function _mod_rewrite()
 	
 	if(isset($_SERVER['HTTP_MOD_REWRITE']))
 	{
-		debug_log("l'info est indiqué dans la Globale _SERVER_ ...");
+		debug_log("l'info est indiquÃ© dans la Globale _SERVER_ ...");
 		
 		if (getenv('HTTP_MOD_REWRITE') === 'On')
 		{
-			debug_log("mod_rewrite activé");
+			debug_log("mod_rewrite activÃ©");
 			return true;			
 		}
 		else
 		{
-			debug_log("mod_rewrite desactivé");
+			debug_log("mod_rewrite desactivÃ©");
 		}
 	}
 	else
 	{
-		debug_log("l'info n'est pas indiqué dans la Globale _SERVER_ ...");
+		debug_log("l'info n'est pas indiquÃ© dans la Globale _SERVER_ ...");
 	}
 	//if (strpos(shell_exec('/usr/local/apache/bin/apachectl -l'), 'mod_rewrite') !== false)
 	//	return true;
@@ -57,17 +57,17 @@ function verif_install()
 	// pas de fichier de configuration
 	if(!$_configured) return 1 ;
 	
-	// la base n'existe pas, meme si le fichier de config a été généré
+	// la base n'existe pas, meme si le fichier de config a Ã©tÃ© gÃ©nÃ©rÃ©
 	if(is_null($bdd)) return 2 ;
 	
 	if(!test_db('%Configuration')) return 2 ;
 	
 	$install_Data = get_db('install_config');
 		
-	// à partir d'ici, l'index de la derniere etape procedée est en base
+	// Ã  partir d'ici, l'index de la derniere etape procedÃ©e est en base
 	if(isset($install_Data)) return $install_Data['Configuration_Value'];
 	
-	// la base et le fichier ont été créé, pas l'enregistrement....
+	// la base et le fichier ont Ã©tÃ© crÃ©Ã©, pas l'enregistrement....
 	return 2;
 }
 
@@ -427,7 +427,7 @@ function path_module($Module="Main",$directory="Public")
 
 	if($installing && $install_step < 5 )
 	{
-		debug_log("non installé...",false);
+		debug_log("non installÃ©...",false);
 		if(file_exists($_path.'Sources/Install/Modules/Index.php') )
 			return($_path.'Sources/Install/Modules/Index.php');
 	}
@@ -473,7 +473,7 @@ function path_view($Module="Main",$directory="Public")
 	*/
 	if($installing && $install_step < 5 )
 	{
-		debug_log("non installé...",false);
+		debug_log("non installÃ©...",false);
 		if(file_exists($_path.'Sources/Install/Views/Index.php') )
 			return($_path.'Sources/Install/Views/Index.php');
 	}
@@ -649,11 +649,11 @@ function get_module_and_page()
 		{
 			$secteur_module = ucfirst($secteur);
 		}
-		elseif(strcasecmp($secteur, "game") == 0)// $secteur === "game" || $secteur === "Game" ) // partie principale - reecriture desactivée
+		elseif(strcasecmp($secteur, "game") == 0)// $secteur === "game" || $secteur === "Game" ) // partie principale - reecriture desactivÃ©e
 		{
 			$secteur_module = ucfirst($secteur);
 		}
-		elseif(!$installing) // installation terminée
+		elseif(!$installing) // installation terminÃ©e
 		{		
 			$secteur_module = ucfirst($secteur);
 		}
@@ -843,7 +843,7 @@ function get_link($Module="Main",$directory="",$params = array() )
 		}break;
 **/		
 		case 'Contenu' :
-		case 'Content' :{ // pages institutionnelles  | A propos | Contact | Mentions légales | Règlement | FAQ
+		case 'Content' :{ // pages institutionnelles  | A propos | Contact | Mentions lÃ©gales | RÃ¨glement | FAQ
 			if(file_exists($_path."Sources/Contenu/Modules/Index.php")) //".ucfirst($Module)."
 				if($_rewrite)
 					return $_url."Contenu/".strtolower($Module).($parametres !="" ? '/'.$parametres : '' ).".html";
@@ -877,9 +877,9 @@ function get_url()
 
 /**
  * password_decode()
- * Décode une chaine encodée par password_decode().
- * La fonction ne retournera la chaine d'origine que si le mot de passe utilisé pour décoder est le même que celui utilisé pour encoder. 
- * Dans le cas ou le mot de passe est différent, la fonction retournera une autre chaine.
+ * DÃ©code une chaine encodÃ©e par password_decode().
+ * La fonction ne retournera la chaine d'origine que si le mot de passe utilisÃ© pour dÃ©coder est le mÃªme que celui utilisÃ© pour encoder. 
+ * Dans le cas ou le mot de passe est diffÃ©rent, la fonction retournera une autre chaine.
  **/
 function password_decode($filter, $str) 
 {
@@ -908,8 +908,8 @@ function password_decode($filter, $str)
 }
 
 /** 
- * inscrit les données d'un array dans un gabarit  HTML
- * pouvoir ajouter un répertoire view avec des fichier HTML 
+ * inscrit les donnÃ©es d'un array dans un gabarit  HTML
+ * pouvoir ajouter un rÃ©pertoire view avec des fichier HTML 
  * plutot que d'avoir <?php echo $var ?> dans test.php , on aura [var] dans test.html
  * et il sera plus simple pour les utilisateur d'utiliser et modifier test.html
  * @param $fileTemplate
@@ -933,7 +933,7 @@ function buildViewFromTemplate($fileTemplate, $content=array())
 
 /**
  * password_encode()
- * Encode un texte, ou tout autre chaine de caractères 
+ * Encode un texte, ou tout autre chaine de caractÃ¨res 
  * (les chaines binaires marchent aussi, comme les fichiers image) en utilisant un mot de passe.
  **/
 function password_encode($filter, $str)
@@ -965,19 +965,19 @@ function password_encode($filter, $str)
  /**
  *
  * Fonction recursive qui supprime l'effet des magic quotes
- * à utiliser pour l'affichage des données
- * il faut la retravailler. j'ai quelques cas où ça suprrime aussi les retour chariot
+ * Ã  utiliser pour l'affichage des donnÃ©es
+ * il faut la retravailler. j'ai quelques cas oÃ¹ Ã§a suprrime aussi les retour chariot
  * @param $var
  */
 function stripslashes_r($var)
 {
     //print_array($var, 'stripslashes_r');
 	
-        if(is_array($var) ) // Si la variable passée en argument est un array, on appelle la fonction stripslashes_r dessus
+        if(is_array($var) ) // Si la variable passÃ©e en argument est un array, on appelle la fonction stripslashes_r dessus
             foreach($var as $champs => $value)
                 $var[$champs] = stripslashes_r($value) ;
     else
-        if(is_object($var)) // Si la variable passée en argument est un object, on appelle la fonction stripslashes_r dessus
+        if(is_object($var)) // Si la variable passÃ©e en argument est un object, on appelle la fonction stripslashes_r dessus
             foreach($var as $champs => $value)
                 $var->{$champs} = stripslashes_r($value) ;
     else // Sinon, un simple stripslashes suffit
@@ -993,8 +993,8 @@ function stripslashes_r($var)
 
 /**
  * fonction recursive pour un prevenir les injection SQL dans le code
- * pour toute variable envoyé vers la base de données
- * il faut la retravailler. j'ai quelques cas où ça suprrime aussi les retour chariot
+ * pour toute variable envoyÃ© vers la base de donnÃ©es
+ * il faut la retravailler. j'ai quelques cas oÃ¹ Ã§a suprrime aussi les retour chariot
  */
 function addslashes_r($var, $toHtml = false)
 {
@@ -1002,7 +1002,7 @@ function addslashes_r($var, $toHtml = false)
         foreach($var as $champs => $value)
             $var[$champs] = addslashes_r($value, $toHtml) ;
      else
-        if(is_object($var)) // Si la variable passée en argument est un object, on appelle la fonction stripslashes_r dessus
+        if(is_object($var)) // Si la variable passÃ©e en argument est un object, on appelle la fonction stripslashes_r dessus
             foreach($var as $champs => $value)
                 $var->{$champs} = addslashes_r($value) ;
     else // Sinon, le grand nettoyage
@@ -1041,16 +1041,16 @@ function securite_bdd($string)
 /**
  * 	recuperation de l'adresse IP du client 
  * @property on cherche d'abord a savoir 
- * <li> si c'est une connection partagée</li>
- * <li> si il est derrière un proxy</li>
+ * <li> si c'est une connection partagÃ©e</li>
+ * <li> si il est derriÃ¨re un proxy</li>
  * @return la vraie adresse IP
  **/
 function getRealIpAddr() 
 {
-	// check si c'est une connection partagée
+	// check si c'est une connection partagÃ©e
 		if( getenv('HTTP_CLIENT_IP') != null ) 
 			$ip=getenv('HTTP_CLIENT_IP');
-	else // check si ça passe au travers d'un proxy
+	else // check si Ã§a passe au travers d'un proxy
 		if( getenv('HTTP_X_FORWARDED_FOR') != null ) 
 			$ip=getenv('HTTP_X_FORWARDED_FOR');
 	else // c'est une connexion normale
@@ -1181,7 +1181,7 @@ function getBrowser()
 } 
 
 
-/** verifie si une variable existe bien dans les données envoyes **/
+/** verifie si une variable existe bien dans les donnÃ©es envoyes **/
 function request_confirm($key)
 {
     debug_log("request_confirm(GET-$key)::".(isset($_GET[$key]) && !empty($_GET[$key]) ? "true" : "false" ) );
@@ -1241,8 +1241,8 @@ function request_post( $key ,  $default ="" , $a_html = false )
 
 
 /*
- * Cette fonction génère, sauvegarde et retourne un token
- * Vous pouvez lui passer en paramètre optionnel un nom pour différencier les formulaires
+ * Cette fonction gÃ©nÃ¨re, sauvegarde et retourne un token
+ * Vous pouvez lui passer en paramÃ¨tre optionnel un nom pour diffÃ©rencier les formulaires
  */
 function generer_token($nom = '')
 {
@@ -1255,10 +1255,10 @@ function generer_token($nom = '')
 	return $token;
 }
 
-/**Cette fonction vérifie le token
- * Vous passez en argument le temps de validité (en secondes)
+/**Cette fonction vÃ©rifie le token
+ * Vous passez en argument le temps de validitÃ© (en secondes)
  * Le referer attendu (adresse absolue, rappelez-vous :D)
- * Le nom optionnel si vous en avez défini un lors de la création du token
+ * Le nom optionnel si vous en avez dÃ©fini un lors de la crÃ©ation du token
  */
 function verifier_token($temps, $referer, $nom = '')
 {
@@ -1307,7 +1307,7 @@ function verifier_token($temps, $referer, $nom = '')
 
 						}
 						else
-							debug_log("time superieur à limites....");
+							debug_log("time superieur Ã  limites....");
 					
 					}
 					else
@@ -1319,7 +1319,7 @@ function verifier_token($temps, $referer, $nom = '')
 				
 			}
 			else
-				debug_log("pas de token lié à '$nom' en session...");
+				debug_log("pas de token liÃ© Ã  '$nom' en session...");
 		
 			
 			unset($_SESSION['formulaire_token']);
@@ -1328,7 +1328,7 @@ function verifier_token($temps, $referer, $nom = '')
 			debug_log("pas de formulaire_token en session...");
 	}
     else
-		debug_log("pas de token posté...".print_r($_POST,1));
+		debug_log("pas de token postÃ©...".print_r($_POST,1));
     return $return ;
 }
 
@@ -1340,7 +1340,7 @@ function clear_token()
 		debug_log("pas de token post",false);
 		if(isset($_SESSION['formulaire_token']) && !empty($_SESSION['formulaire_token']))
         {
-            debug_log("données conservées en memoire...",false);
+            debug_log("donnÃ©es conservÃ©es en memoire...",false);
 			//$_SESSION['formulaire_token'] = array();
 			//unset($_SESSION['formulaire_token']);
 		}
@@ -1382,11 +1382,11 @@ function clear_token()
 if(!function_exists('verif_connect'))
 {
 	/** 
-	 * verifie si l'utilisateur est connecté à chaque debut de page. et affiche le contenu
+	 * verifie si l'utilisateur est connectÃ© Ã  chaque debut de page. et affiche le contenu
 	 * sinon, on affiche la page de refus 
 	 * @param $menu = false 
-	 * quand on n'est pas connecté si on se trouve dans le header.php elle renvoie le message d'erreur et interromps le script avec la fonction native die();
-	 * quand on n'est pas connecté si on est dans le menu, elle renvoie un false et n'affiche aucun contenu.
+	 * quand on n'est pas connectÃ© si on se trouve dans le header.php elle renvoie le message d'erreur et interromps le script avec la fonction native die();
+	 * quand on n'est pas connectÃ© si on est dans le menu, elle renvoie un false et n'affiche aucun contenu.
 	 */ 
 	function verif_connect($menu = false)
 	{
@@ -1396,10 +1396,10 @@ if(!function_exists('verif_connect'))
 		{
 			if(!$menu) 
 			{
-				//Si il n'existe pas de données dans la session pseudo, demander de se connecter
+				//Si il n'existe pas de donnÃ©es dans la session pseudo, demander de se connecter
 				if(file_exists($_path."Design/$MMORPG_Template/Templates/Head.php"))
 					require_once($_path."Design/$MMORPG_Template/Templates/Head.php");
-				//echo 'Vous devez être connecté pour accèder à cette page';
+				//echo 'Vous devez Ãªtre connectÃ© pour accÃ¨der Ã  cette page';
 				echo LanguageValidation::iMsg('require.login.to.access');
 				if(file_exists($_path."Design/$MMORPG_Template/Templates/Footer.php"))
 					require_once($_path."Design/$MMORPG_Template/HTML/Footer.php");
@@ -1411,6 +1411,17 @@ if(!function_exists('verif_connect'))
 		
 		return true ;
 	}
+}
+
+//Indique si une adresse est bannie
+function is_ban($ip) {
+     $ip = ip2long($ip);
+     $nbr = count_db('get_ban_ip',array('ip' => $ip));
+     
+     if ($nbr == 0)
+          return (false);
+     else
+          return (true);
 }
 
 if(!function_exists('verif_auth'))
@@ -1449,7 +1460,7 @@ if(!function_exists('verif_auth'))
 if(!function_exists('verif_access'))
 {
 	/** 
-	 * verifie si l'utilisateur a un acces autorisé à chaque debut de page
+	 * verifie si l'utilisateur a un acces autorisÃ© Ã  chaque debut de page
 	 * sinon, on affiche la page de refus 
 	 * @param level requis
 	 */
@@ -1503,7 +1514,7 @@ if(!function_exists('verif_access'))
 				if(!$menu)
 				{
 					echo '<center>';
-					echo 'Vous ne possèdez pas les droits nécessaire pour accèder à cette partie du site';
+					echo 'Vous ne possÃ¨dez pas les droits nÃ©cessaire pour accÃ¨der Ã  cette partie du site';
 					echo LanguageValidation::iMsg('not.have.require.rights.to.access');
 					echo '</center>';	
 					//require_once($path."HTML/Footer.php");
@@ -1588,9 +1599,9 @@ function log_files($dir,$file,$content)
 	//$exec = file_put_contents($path."Logs/".$dir."/".$file, $content );
 	//return ($exec!==false ?  true : false) ;
 	
-	$creation_fichier = fopen($path."Logs/".$dir."/".$file, 'w+'); // On créé le fichier puis on l'ouvre
-	fseek($creation_fichier, 0); // On remet le curseur au début du fichier
-	fputs($creation_fichier, $content); // On écrit à l'intérieur la date du jour et on met le nombre de tentatives à 1
+	$creation_fichier = fopen($path."Logs/".$dir."/".$file, 'w+'); // On crÃ©Ã© le fichier puis on l'ouvre
+	fseek($creation_fichier, 0); // On remet le curseur au dÃ©but du fichier
+	fputs($creation_fichier, $content); // On Ã©crit Ã  l'intÃ©rieur la date du jour et on met le nombre de tentatives Ã  1
 	fclose($creation_fichier); // On referme
 
 	return true ;	
@@ -1736,7 +1747,7 @@ function bb_code($texte)
 	$texte = preg_replace('`\[b\](.+)\[/b\]`isU', '<strong>$1</strong>', $texte); 
 	//italique
 	$texte = preg_replace('`\[i\](.+)\[/i\]`isU', '<em>$1</em>', $texte);
-	//souligné
+	//soulignÃ©
 	$texte = preg_replace('`\[u\](.+)\[/u\]`isU', '<u>$1</u>', $texte);
 	//lien
 	$texte = preg_replace('!\[url=(.+)\](.+)\[/url\]!isU', '<a href="$1">$2</a>', $texte);	//$texte = preg_replace('#http://[a-z0-9._/-]+#i', '<a href="$0">$0</a>', $texte);
