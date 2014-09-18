@@ -1,17 +1,17 @@
 <?php
 
-	// added by Dimitri : mapping de la base de données
-    // les cles etrangeres mises en commentaires posaient des problemes d'integrité lors de l'installation
-    // town => chapter et monster crées une boucle infini dans leur contrainte
-    // les premiers enregistrements de Monster se font sans item à recuperer
+	// added by Dimitri : mapping de la base de donnÃ©es
+    // les cles etrangeres mises en commentaires posaient des problemes d'integritÃ© lors de l'installation
+    // town => chapter et monster crÃ©es une boucle infini dans leur contrainte
+    // les premiers enregistrements de Monster se font sans item Ã  recuperer
 
-	// table à ajouter...
+	// table Ã  ajouter...
 	// enregistrement de l'exploration.... => achievements
 	// forteresse de guilde
 	// forteresse d'ordre...
 	// 	=> prise de forteresse
 	//	=> destruction d'ordre/guilde
-	// monture => deplacement 3 à 4
+	// monture => deplacement 3 Ã  4
 	// pnj
 	// peon
 	// familier
@@ -37,7 +37,7 @@ $db_mapping = array
 			'Page_ID'  => array ( 'type' => 'int', 'length' =>11 ,'nullable' => 'NOT NULL' , 'increment' => 'AUTO_INCREMENT' ) ,
 			'Page_Title' => array ( 'type' => 'varchar', 'length' =>30 ,'nullable' => 'NOT NULL','label'=>'Titre','mandatory' => true),
 			'Page_Description'  => array ( 'type' => 'TEXT' ,'nullable' => 'NOT NULL','label'=>'Description','mandatory' => true),
-			'Page_Keywords'  => array ( 'type' => 'TEXT' ,'nullable' => 'NOT NULL','label'=>'Mots-clés','mandatory' => true),
+			'Page_Keywords'  => array ( 'type' => 'TEXT' ,'nullable' => 'NOT NULL','label'=>'Mots-clÃ©s','mandatory' => true),
 			'Page_Content'  => array ( 'type' => 'TEXT' ,'nullable' => 'NOT NULL','label'=>'Contenu','mandatory' => true, 'html' => true),
 			'Page_Order' => array ( 'type' => 'int', 'length' =>11 ,'nullable' => 'NOT NULL','label'=>'Niveau', 'default' => 1, 'Ordering' => true), //text
 			'Page_Guild_ID' => array ( 'type' => 'int', 'length' =>11 ,'nullable' => 'NOT NULL','label'=> 'Guilde'),
@@ -65,7 +65,7 @@ $db_mapping = array
     		'Level_MP' => array ( 'type' => 'bigint', 'length' =>255 ,'nullable' => 'NOT NULL', 'label' => "MP"),
     		'Level_Strength' => array ( 'type' => 'bigint', 'length' =>255 ,'nullable' => 'NOT NULL', 'label' => "Force"),
     		'Level_Magic' => array ( 'type' => 'bigint', 'length' =>255 ,'nullable' => 'NOT NULL', 'label' => "Magie"),
-    		'Level_Agility' => array ( 'type' => 'bigint', 'length' =>255 ,'nullable' => 'NOT NULL', 'label' => "Agilité"),
+    		'Level_Agility' => array ( 'type' => 'bigint', 'length' =>255 ,'nullable' => 'NOT NULL', 'label' => "AgilitÃ©"),
     		'Level_Defense' => array ( 'type' => 'bigint', 'length' =>255 ,'nullable' => 'NOT NULL', 'label' => "Defense")
 		),
 		'key' => array (
@@ -88,7 +88,7 @@ $db_mapping = array
 			'Item_MP_Effect' => array ( 'type' => 'int', 'length' =>11 ,'nullable' => 'NOT NULL', 'label'=> 'MP+'),
 			'Item_Strength_Effect' => array ( 'type' => 'int', 'length' =>11 ,'nullable' => 'NOT NULL', 'label'=>'Force+'),
 			'Item_Magic_Effect' => array ( 'type' => 'int', 'length' =>11 ,'nullable' => 'NOT NULL', 'label'=>'Magie+'),
-			'Item_Agility_Effect' => array ( 'type' => 'int', 'length' =>11 ,'nullable' => 'NOT NULL', 'label'=>'Agilité+'),
+			'Item_Agility_Effect' => array ( 'type' => 'int', 'length' =>11 ,'nullable' => 'NOT NULL', 'label'=>'AgilitÃ©+'),
 			'Item_Defense_Effect' => array ( 'type' => 'int', 'length' =>11 ,'nullable' => 'NOT NULL', 'label'=>'Defense+'),
 			'Item_Town' => array ( 'type' => 'int', 'length' =>5 ,'nullable' => 'NOT NULL', 'label'=>'Ville','mandatory' => true),
 			'Item_Purchase_Price' => array ( 'type' => 'int', 'length' =>11 ,'nullable' => 'NOT NULL', 'label'=>'Prix d\'achat','mandatory' => true),
@@ -117,6 +117,7 @@ $db_mapping = array
 			'Fragment_Town_ID' => array ( 'type' => 'int', 'length' =>5 ,'nullable' => 'NOT NULL', 'label'=>'Ville','mandatory' => true),
 			'Fragment_Purchase_Price' => array ( 'type' => 'int', 'length' =>11 ,'nullable' => 'NOT NULL', 'label'=>'Prix d\'achat','mandatory' => true),
 			'Fragment_Sale_Price' => array ( 'type' => 'int', 'length' =>11 ,'nullable' => 'NOT NULL', 'label'=>'Prix de vente','mandatory' => true)
+			'Fragment_Fabrique' => array ( 'type' => 'varchar', 'length' =>50, 'collate' => 'utf8_general_ci' ,'nullable' => 'NOT NULL','label'=> 'Type', 'values' => $array_work_class['transformation'] ), //array('ressource','fragment','item')),
 		),
 		'key' => array (
 		
@@ -148,7 +149,7 @@ $db_mapping = array
 		)
 	),
 
-	// X items à sacrifier pour fabriquer 1 item...
+	// X items Ã  sacrifier pour fabriquer 1 item...
 	// requiere l'apprentissage d'un metier(work)
 	'Caranille_Craftings' => array 
 	(
@@ -168,8 +169,8 @@ $db_mapping = array
 		'champs' => array
 		(
 			proprietaire
-			coordonnées_x
-			coordonnées_y
+			coordonnÃ©es_x
+			coordonnÃ©es_y
 			ville
 		),
 		'key' => array 
@@ -213,7 +214,7 @@ $db_mapping = array
 			'Monster_Image' => array ( 'key' => 'FOREIGN' , 'table' => 'Caranille_Images' , 'champs' => 'Image_ID' , 'toString' => 'Image_Name' ) ,
 			'Monster_Town' => array ( 'key' => 'FOREIGN' , 'table' => 'Caranille_Towns' , 'champs' => 'Town_ID' , 'toString' => 'Town_Name') ,
 			
-			//implique que Caranille_Towns soit créé avant
+			//implique que Caranille_Towns soit crÃ©Ã© avant
 			//1 monstre requiere 1 ville
 			//1 ville requiere 1 chapitre
 			//1 chapitre requiere 1 monstre
@@ -244,7 +245,7 @@ $db_mapping = array
 		'champs' => array
 		(
 			'Chapter_ID' => array ( 'type' => 'INT' ,'nullable' => 'NOT NULL' , 'increment' => 'AUTO_INCREMENT' ) ,
-			'Chapter_Number' => array ( 'type' => 'int', 'length' =>5 ,'nullable' => 'NOT NULL','mandatory' => true, 'label'=>'Numéro du chapitre', 'Ordering' => true),
+			'Chapter_Number' => array ( 'type' => 'int', 'length' =>5 ,'nullable' => 'NOT NULL','mandatory' => true, 'label'=>'NumÃ©ro du chapitre', 'Ordering' => true),
 			'Chapter_Name' => array ( 'type' => 'varchar', 'length' =>30 ,'nullable' => 'NOT NULL','mandatory' => true, 'label'=>'Titre du chapitre'),
 			'Chapter_Opening' => array ( 'type' => 'TEXT' ,'nullable' => 'NOT NULL', 'label'=>'Ouverture du chapitre', 'html' => true),
 			'Chapter_Ending' => array ( 'type' => 'TEXT' ,'nullable' => 'NOT NULL', 'label'=>'Conclusion du chapitre', 'html' => true),
@@ -257,7 +258,7 @@ $db_mapping = array
 			'Chapter_Number' => array (  'key' => 'UNIQUE') ,
 			'Chapter_Name' => array (  'key' => 'UNIQUE') ,
 			
-			//implique que Caranille_Monsters soit créé avant
+			//implique que Caranille_Monsters soit crÃ©Ã© avant
 			
 			//1 monstre requiere 1 ville
 			//1 ville requiere 1 chapitre
@@ -301,7 +302,7 @@ $db_mapping = array
 			'Town_ID' => array (  'key' => 'PRIMARY') ,
 			'Town_Name' => array (  'key' => 'UNIQUE') ,
 			
-			//implique que Caranille_Chapters soit créé avant
+			//implique que Caranille_Chapters soit crÃ©Ã© avant
 			
 			//1 monstre requiere 1 ville
 			//1 ville requiere 1 chapitre
@@ -342,8 +343,8 @@ $db_mapping = array
 			'Account_Password' => array ( 'type' => 'varchar', 'length' =>30 ,'nullable' => 'NOT NULL','label'=> 'Mot de passe'),
 			'Account_Salt' => array ( 'type' => 'varchar', 'length' =>30 ,'nullable' => 'NOT NULL'),
 			'Account_Email' => array ( 'type' => 'varchar', 'length' =>30 ,'nullable' => 'NOT NULL','label' => 'Email' , 'mandatory' => true),
-			'Account_Key' => array ( 'type' => 'varchar', 'length' =>255 ,'nullable' => 'NOT NULL'), // clé de validation
-			'Account_Valid' => array ( 'type' => 'tinyint', 'length' =>4 ,'nullable' => 'NOT NULL','label'=> 'Validité', 'default' => '0'), // inscription validé
+			'Account_Key' => array ( 'type' => 'varchar', 'length' =>255 ,'nullable' => 'NOT NULL'), // clÃ© de validation
+			'Account_Valid' => array ( 'type' => 'tinyint', 'length' =>4 ,'nullable' => 'NOT NULL','label'=> 'ValiditÃ©', 'default' => '0'), // inscription validÃ©
 
 			//'Account_msn' => array ( 'type' => 'varchar', 'length' =>250, 'collate' => 'utf8_general_ci' ,'nullable' => 'NOT NULL' ) ,
 			//  'Account_Siteweb' => array ( 'type' => 'varchar', 'length' =>100, 'collate' => 'utf8_general_ci' ,'nullable' => 'NOT NULL','label' => 'Site Web' ) ,
@@ -379,12 +380,12 @@ $db_mapping = array
 			'Account_Classe' => array ( 'type' => 'int', 'length' =>11 ,'nullable' => 'NOT NULL','label'=> 'Classe'),
 			
 			'Account_Roaster_ID' => array ( 'type' => 'int', 'length' =>11 ,'nullable' => 'NOT NULL','label'=> 'Roaster'),
-			'Account_Roaster_Accept' => array ( 'type' => 'tinyint', 'length' =>4 ,'nullable' => 'NOT NULL','label'=> 'Accepté', 'default' => '0'), // inscription validé
+			'Account_Roaster_Accept' => array ( 'type' => 'tinyint', 'length' =>4 ,'nullable' => 'NOT NULL','label'=> 'AcceptÃ©', 'default' => '0'), // inscription validÃ©
 			'Account_Guild_ID' => array ( 'type' => 'int', 'length' =>11 ,'nullable' => 'NOT NULL','label'=> 'Guilde'),
-			'Account_Guild_Accept' => array ( 'type' => 'tinyint', 'length' =>4 ,'nullable' => 'NOT NULL','label'=> 'Accepté', 'default' => '0'), // inscription validé
+			'Account_Guild_Accept' => array ( 'type' => 'tinyint', 'length' =>4 ,'nullable' => 'NOT NULL','label'=> 'AcceptÃ©', 'default' => '0'), // inscription validÃ©
 			'Account_Rank_ID' => array ( 'type' => 'int', 'length' =>11 ,'nullable' => 'NOT NULL','label'=> 'Rang de guilde'),
 			
-			'Account_Notoriety' => array ( 'type' => 'bigint' , 'length' =>255 ,'nullable' => 'NOT NULL', 'label'=>'Notoriété' ),
+			'Account_Notoriety' => array ( 'type' => 'bigint' , 'length' =>255 ,'nullable' => 'NOT NULL', 'label'=>'NotoriÃ©tÃ©' ),
 			'Account_Golds' => array ( 'type' => 'bigint', 'length' =>255 ,'nullable' => 'NOT NULL','label'=> 'Fortune'),
 		
 			'Account_Chapter' => array ( 'type' => 'int', 'length' =>11 ,'nullable' => 'NOT NULL','label' => 'Chapitre' ,'mandatory' => true),
@@ -407,7 +408,7 @@ $db_mapping = array
 			'Account_Email' => array (  'key' => 'UNIQUE') ,
 			'Account_Salt' => array (  'key' => 'UNIQUE') ,
 			
-			//implique que Caranille_Guilds/Orders/Chapters/Missions soit créé avant
+			//implique que Caranille_Guilds/Orders/Chapters/Missions soit crÃ©Ã© avant
 			
 			'Account_Roaster_ID'=> array (  'key' => 'FOREIGN' , 'table' => 'Caranille_Roaster' , 'champs' => 'Roaster_ID', 'toString' => 'Roaster_ID'  ) ,
 			'Account_Guild_ID'=> array (  'key' => 'FOREIGN' , 'table' => 'Caranille_Guilds' , 'champs' => 'Guild_ID', 'toString' => 'Guild_Name'  ) ,
@@ -418,7 +419,7 @@ $db_mapping = array
 			'Account_Chapter' => array ( 'key' => 'FOREIGN' , 'table' => 'Caranille_Chapters' , 'champs' => 'Chapter_ID', 'toString' => 'Chapter_Name'  ) ,
 			'Account_Mission' => array ( 'key' => 'FOREIGN' , 'table' => 'Caranille_Missions' , 'champs' => 'Mission_ID' , 'toString' => 'Mission_Name'  ) ,
 			
-			// le compte admin n'a pas de level à la generation... 
+			// le compte admin n'a pas de level Ã  la generation... 
 			
 			'Account_Level' => array ( 'key' => 'FOREIGN' , 'table' => 'Caranille_Levels' , 'champs' => 'Level_ID', 'toString' => 'Level_Number'  ) ,
 		)
@@ -526,15 +527,15 @@ $db_mapping = array
 		'champs' => array(	
 			'Roaster_ID' => array ( 'type' => 'INT' ,'nullable' => 'NOT NULL' , 'increment' => 'AUTO_INCREMENT' ) ,
 			'Roaster_Member_1' => array ( 'type' => 'int', 'length' =>11 ,'nullable' => 'NOT NULL','label'=>'fondateur'),
-		/**	'Roaster_statut_1' => array ('type' => 'tinyint', 'length' =>4 , 'default' => 0,'label'=>'Utilisé ?'),
+		/**	'Roaster_statut_1' => array ('type' => 'tinyint', 'length' =>4 , 'default' => 0,'label'=>'UtilisÃ© ?'),
 			'Roaster_Member_2' => array ( 'type' => 'int', 'length' =>11 ,'nullable' => 'NOT NULL','label'=>'fondateur'),
-			'Roaster_statut_2' => array ('type' => 'tinyint', 'length' =>4 , 'default' => 0,'label'=>'Utilisé ?'),
+			'Roaster_statut_2' => array ('type' => 'tinyint', 'length' =>4 , 'default' => 0,'label'=>'UtilisÃ© ?'),
 			'Roaster_Member_3' => array ( 'type' => 'int', 'length' =>11 ,'nullable' => 'NOT NULL','label'=>'fondateur'),
-			'Roaster_statut_3' => array ('type' => 'tinyint', 'length' =>4 , 'default' => 0,'label'=>'Utilisé ?'),
+			'Roaster_statut_3' => array ('type' => 'tinyint', 'length' =>4 , 'default' => 0,'label'=>'UtilisÃ© ?'),
 			'Roaster_Member_4' => array ( 'type' => 'int', 'length' =>11 ,'nullable' => 'NOT NULL','label'=>'fondateur'),
-			'Roaster_statut_4' => array ('type' => 'tinyint', 'length' =>4 , 'default' => 0,'label'=>'Utilisé ?'),
+			'Roaster_statut_4' => array ('type' => 'tinyint', 'length' =>4 , 'default' => 0,'label'=>'UtilisÃ© ?'),
 			'Roaster_Member_5' => array ( 'type' => 'int', 'length' =>11 ,'nullable' => 'NOT NULL','label'=>'fondateur'),
-			'Roaster_statut_5' => array ('type' => 'tinyint', 'length' =>4 , 'default' => 0,'label'=>'Utilisé ?'),
+			'Roaster_statut_5' => array ('type' => 'tinyint', 'length' =>4 , 'default' => 0,'label'=>'UtilisÃ© ?'),
 		**/
 		),
 		
@@ -575,8 +576,8 @@ $db_mapping = array
 			'Inventory_ID' => array ( 'type' => 'int', 'length' =>5 ,'nullable' => 'NOT NULL' , 'increment' => 'AUTO_INCREMENT' ) ,
 			'Inventory_Account_ID' => array ( 'type' => 'int', 'length' =>5 ,'nullable' => 'NOT NULL'),
 			'Inventory_Item_ID' => array ( 'type' => 'int', 'length' =>5 ,'nullable' => 'NOT NULL','label'=>'Item'),
-			'Inventory_Item_Quantity' => array ( 'type' => 'int', 'length' =>5 ,'nullable' => 'NOT NULL','label'=>'Qté'),
-			'Inventory_Item_Equipped' => array ( 'type' => 'varchar', 'length' =>10 ,'nullable' => 'NOT NULL','label'=>'Equipé?')
+			'Inventory_Item_Quantity' => array ( 'type' => 'int', 'length' =>5 ,'nullable' => 'NOT NULL','label'=>'QtÃ©'),
+			'Inventory_Item_Equipped' => array ( 'type' => 'varchar', 'length' =>10 ,'nullable' => 'NOT NULL','label'=>'EquipÃ©?')
 		),
 		'key' => array (
 			'Inventory_ID' => array (  'key' => 'PRIMARY') ,
@@ -592,7 +593,7 @@ $db_mapping = array
 			'Inventory_ID' => array ( 'type' => 'int', 'length' =>5 ,'nullable' => 'NOT NULL' , 'increment' => 'AUTO_INCREMENT' ) ,
 			'Inventory_Account_ID' => array ( 'type' => 'int', 'length' =>5 ,'nullable' => 'NOT NULL'),
 			'Inventory_Ressource_ID'=> array ( 'type' => 'int', 'length' =>5 ,'nullable' => 'NOT NULL','label'=>'Ressource'), 
-			'Inventory_Ressource_Quantity' => array ( 'type' => 'int', 'length' =>5 ,'nullable' => 'NOT NULL','label'=>'Qté'),
+			'Inventory_Ressource_Quantity' => array ( 'type' => 'int', 'length' =>5 ,'nullable' => 'NOT NULL','label'=>'QtÃ©'),
 		),
 		'key' => array 
 		(
@@ -607,7 +608,7 @@ $db_mapping = array
 			'Inventory_ID' => array ( 'type' => 'int', 'length' =>5 ,'nullable' => 'NOT NULL' , 'increment' => 'AUTO_INCREMENT' ) ,
 			'Inventory_Account_ID' => array ( 'type' => 'int', 'length' =>5 ,'nullable' => 'NOT NULL'),
 			'Inventory_Fragment_ID' => array ( 'type' => 'int', 'length' =>5 ,'nullable' => 'NOT NULL','label'=>'fragment'),
-			'Inventory_Fragment_Quantity' => array ( 'type' => 'int', 'length' =>5 ,'nullable' => 'NOT NULL','label'=>'Qté'),
+			'Inventory_Fragment_Quantity' => array ( 'type' => 'int', 'length' =>5 ,'nullable' => 'NOT NULL','label'=>'QtÃ©'),
 		),
 		'key' => array (
 			'Inventory_ID' => array (  'key' => 'PRIMARY') ,
@@ -637,7 +638,7 @@ $db_mapping = array
 	'Caranille_Inventory_Invocations' => array (
 		'champs' => array(
 			'Inventory_Invocation_Account_ID' => array ( 'type' => 'int', 'length' =>5 ,'nullable' => 'NOT NULL'),
-			'Inventory_Invocation_Invocation_ID' => array ( 'type' => 'int', 'length' =>5 ,'nullable' => 'NOT NULL','label'=>'Chimère')
+			'Inventory_Invocation_Invocation_ID' => array ( 'type' => 'int', 'length' =>5 ,'nullable' => 'NOT NULL','label'=>'ChimÃ¨re')
 		),
 		'key' => array (
 			'Inventory_Invocation_Account_ID'=> array (  'key' => 'PRIMARY FOREIGN' , 'table' => 'Caranille_Accounts' , 'champs' => 'Account_ID' ) ,
@@ -695,8 +696,8 @@ $db_mapping = array
 			'Newsreaders_Pseudo' => array ( 'type' => 'varchar', 'length' =>30 ,'nullable' => 'NOT NULL','label' => 'Pseudo' , 'mandatory' => true),
 			'Newsreaders_Password' => array ( 'type' => 'varchar', 'length' =>30 ,'nullable' => 'NOT NULL','label'=> 'Mot de passe'),
 			'Newsreaders_Email' => array ( 'type' => 'varchar', 'length' =>30 ,'nullable' => 'NOT NULL','label' => 'Email' , 'mandatory' => true),
-			'Newsreaders_Key' => array ( 'type' => 'varchar', 'length' =>255 ,'nullable' => 'NOT NULL'), // clé de validation
-			'Newsreaders_Valid' => array ( 'type' => 'tinyint', 'length' =>4 ,'nullable' => 'NOT NULL','label'=> 'Validité', 'default' => '0'), // inscription validé
+			'Newsreaders_Key' => array ( 'type' => 'varchar', 'length' =>255 ,'nullable' => 'NOT NULL'), // clÃ© de validation
+			'Newsreaders_Valid' => array ( 'type' => 'tinyint', 'length' =>4 ,'nullable' => 'NOT NULL','label'=> 'ValiditÃ©', 'default' => '0'), // inscription validÃ©
 			'Newsreaders_isBadMail' => array ( 'type' => 'tinyint', 'length' =>1 ,'nullable' => 'NOT NULL','label'=> 'Fonctionnell', 'default' => '0'),
 		),
 		'key' => array (
@@ -750,7 +751,7 @@ $db_mapping = array
 			'Order_MP_Effect' => array ( 'type' => 'int', 'length' =>11 ,'nullable' => 'NOT NULL', 'label'=> 'MP+'),
 			'Order_Strength_Effect' => array ( 'type' => 'int', 'length' =>11 ,'nullable' => 'NOT NULL', 'label'=>'Force+'),
 			'Order_Magic_Effect' => array ( 'type' => 'int', 'length' =>11 ,'nullable' => 'NOT NULL', 'label'=>'Magie+'),
-			'Order_Agility_Effect' => array ( 'type' => 'int', 'length' =>11 ,'nullable' => 'NOT NULL', 'label'=>'Agilité+'),
+			'Order_Agility_Effect' => array ( 'type' => 'int', 'length' =>11 ,'nullable' => 'NOT NULL', 'label'=>'AgilitÃ©+'),
 			'Order_Defense_Effect' => array ( 'type' => 'int', 'length' =>11 ,'nullable' => 'NOT NULL', 'label'=>'Defense+'),
 		),
 		'key' => array (
@@ -805,9 +806,9 @@ $db_mapping = array
 			'Quest_Introduction' => array ( 'type' => 'TEXT' ,'nullable' => 'NOT NULL', 'label'=>'Introduction', 'html' => true),
 			'Quest_Victory' => array ( 'type' => 'TEXT' ,'nullable' => 'NOT NULL', 'label'=>'Victoire', 'html' => true),
 			'Quest_Defeate' => array ( 'type' => 'TEXT' ,'nullable' => 'NOT NULL', 'label'=>'Echec', 'html' => true),
-			'Quest_Item' => array ( 'type' => 'int', 'length' =>5 ,'nullable' => 'NOT NULL', 'label'=>'Item à trouver'),
-			'Quest_Count' => array ( 'type' => 'int', 'length' =>5 ,'nullable' => 'NOT NULL', 'label'=>'Nombre à atteindre'),
-			'Quest_Monster' => array ( 'type' => 'int', 'length' =>5 ,'nullable' => 'NOT NULL', 'label'=>'Monstre à abattre'),
+			'Quest_Item' => array ( 'type' => 'int', 'length' =>5 ,'nullable' => 'NOT NULL', 'label'=>'Item Ã  trouver'),
+			'Quest_Count' => array ( 'type' => 'int', 'length' =>5 ,'nullable' => 'NOT NULL', 'label'=>'Nombre Ã  atteindre'),
+			'Quest_Monster' => array ( 'type' => 'int', 'length' =>5 ,'nullable' => 'NOT NULL', 'label'=>'Monstre Ã  abattre'),
 			'Quest_Item_Gift' => array ( 'type' => 'int', 'length' =>5 ,'nullable' => 'NOT NULL', 'label'=>'Item Cadeaux'),
 			'Quest_Gold_Gift' => array ( 'type' => 'int', 'length' =>5 ,'nullable' => 'NOT NULL', 'label'=>'Or Cadeaux'),
 			'Quest_XP_Gift' => array ( 'type' => 'int', 'length' =>5 ,'nullable' => 'NOT NULL', 'label'=>'Experience Cadeaux')
@@ -967,7 +968,7 @@ $db_mapping = array
 	'champs' => array(
 		'Gift_ID'  => array ( 'type' => 'int', 'length' =>11 ,'nullable' => 'NOT NULL' , 'increment' => 'AUTO_INCREMENT') ,
 		'Gift_Code' => array ( 'type' => 'varchar', 'length' =>255, ' collate' => 'utf8_general_ci' ,'nullable' => 'NOT NULL','label'=>'Code'),
-		'Gift_Used' => array ('type' => 'tinyint', 'length' =>4 , 'default' => 0,'label'=>'Utilisé ?'),
+		'Gift_Used' => array ('type' => 'tinyint', 'length' =>4 , 'default' => 0,'label'=>'UtilisÃ© ?'),
 		'Gift_Publication' => array ( 'type' => 'DATETIME','nullable' => 'NOT NULL' ,'label'=> 'Date' ) , 
 		'Gift_Item' => array ( 'type' => 'int', 'length' =>5 ,'nullable' => 'NOT NULL', 'label'=>'Item Cadeaux'),
 	 
@@ -1008,7 +1009,7 @@ $db_mapping = array
 			
 	        'Classe_Armor' => array ( 'type' => 'varchar', 'length' =>10 ,'nullable' => 'NOT NULL','label'=>'Armes', 'values' => $array_armor_type ,'mandatory' => true),
 	        'Classe_Weapon' => array ( 'type' => 'varchar', 'length' =>10 ,'nullable' => 'NOT NULL','label'=>'Armes', 'values' => $array_weapon_type ,'mandatory' => true),
-	        'Classe_Role' => array ( 'type' => 'varchar', 'length' =>10 ,'nullable' => 'NOT NULL','label'=>'ArchÃ©type', 'values' => $_roles_classes ,'mandatory' => true),
+	        'Classe_Role' => array ( 'type' => 'varchar', 'length' =>10 ,'nullable' => 'NOT NULL','label'=>'ArchÃƒÂ©type', 'values' => $_roles_classes ,'mandatory' => true),
 	        
 	        'Classe_Order_ID' => array ( 'type' => 'int', 'length' =>11 ,'nullable' => 'NOT NULL' , 'label' => 'Guild') ,
 
@@ -1016,7 +1017,7 @@ $db_mapping = array
 			'Classe_MP_Effect' => array ( 'type' => 'int', 'length' =>11 ,'nullable' => 'NOT NULL', 'label'=> 'MP+'),
 			'Classe_Strength_Effect' => array ( 'type' => 'int', 'length' =>11 ,'nullable' => 'NOT NULL', 'label'=>'Force+'),
 			'Classe_Magic_Effect' => array ( 'type' => 'int', 'length' =>11 ,'nullable' => 'NOT NULL', 'label'=>'Magie+'),
-			'Classe_Agility_Effect' => array ( 'type' => 'int', 'length' =>11 ,'nullable' => 'NOT NULL', 'label'=>'Agilité+'),
+			'Classe_Agility_Effect' => array ( 'type' => 'int', 'length' =>11 ,'nullable' => 'NOT NULL', 'label'=>'AgilitÃ©+'),
 			'Classe_Defense_Effect' => array ( 'type' => 'int', 'length' =>11 ,'nullable' => 'NOT NULL', 'label'=>'Defense+'),
 		),
 		'key' => array (
@@ -1065,7 +1066,7 @@ $db_mapping = array
 			'Competence_Work_ID' => array ( 'type' => 'int', 'length' =>11 ,'nullable' => 'NOT NULL' , 'label' => 'metier'),
 			'Competence_Account_ID' => array ( 'type' => 'int', 'length' =>11 ,'nullable' => 'NOT NULL' , 'label' => 'joueur'),
 			'Competence_Level' => array ( 'type' => 'int', 'length' =>11 ,'nullable' => 'NOT NULL' , 'label' => 'niveau'),
-			'Competence_Experience' => array ( 'type' => 'int', 'length' =>11 ,'nullable' => 'NOT NULL' , 'label' => 'Expérience'),
+			'Competence_Experience' => array ( 'type' => 'int', 'length' =>11 ,'nullable' => 'NOT NULL' , 'label' => 'ExpÃ©rience'),
 		),
 		'key' => array(
 			'Competence_Account_ID'=> array(   'key' => 'PRIMARY FOREIGN' , 'table' => 'Caranille_Accounts' , 'champs' => 'Account_ID', 'toString' => 'Account_Pseudo' ),
@@ -1090,7 +1091,7 @@ $db_mapping = array
 			//'Plugin_ID' => array ( 'type' => 'tinyint', 'length' =>4 ,'nullable' => 'NOT NULL' , 'increment' => 'AUTO_INCREMENT'),
 			'Plugin_Name' => array ( 'type' => 'varchar', 'length' =>30 ,'nullable' => 'NOT NULL', 'label' => 'Nom'),
 			//'Plugin_Description' => array ( 'type' => 'TEXT' ,'nullable' => 'NOT NULL', 'label' => 'Description'),
-			'Plugin_Active' => array ( 'type' => 'tinyint', 'length' =>4 ,'nullable' => 'NOT NULL','label'=> 'Activé', 'default' => '0'), // inscription validé
+			'Plugin_Active' => array ( 'type' => 'tinyint', 'length' =>4 ,'nullable' => 'NOT NULL','label'=> 'ActivÃ©', 'default' => '0'), // inscription validÃ©
 		 ),
 		'key' => array(
 			//'Plugin_ID' => array(  'key' => 'UNIQUE'),
