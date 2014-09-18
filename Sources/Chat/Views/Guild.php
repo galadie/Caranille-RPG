@@ -7,6 +7,7 @@
 		
 
 		
+		echo '<base target="_parent">';
 		echo '<meta http-equiv="refresh" content="5;URL='.get_link('guild','chat').'">';
 		if(!empty($Messages_Q))
 		{
